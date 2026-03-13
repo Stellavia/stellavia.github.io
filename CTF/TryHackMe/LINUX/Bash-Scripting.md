@@ -4,7 +4,6 @@ title: Bash Scripting
 description: A Walkthrough room to teach you the basics of bash scripting
 ---
 
-
 🔗 [Link to the Room](https://tryhackme.com/room/bashscripting)
 
 🔗 [Link for further learning](https://devhints.io/bash)
@@ -32,6 +31,7 @@ description: A Walkthrough room to teach you the basics of bash scripting
 5.3 [Using parameters in conditionals](#using-parameters-in-conditionals)<br>
 5.4 [Checking files with conditionals](#checking-files-with-conditionals)<br>
 
+---
 
 # 📚 Study Notes #
 
@@ -79,13 +79,15 @@ description: A Walkthrough room to teach you the basics of bash scripting
 
 - In Bash, you create a variable like this: `name="Jammy"`
 - Important rules: No spaces around `=` and variable names **can’t contain spaces**
-  
-![image](https://github.com/user-attachments/assets/7fcb4243-49a7-48b1-98d6-1aab41960634)
 
+![image](https://github.com/user-attachments/assets/455991db-2ce1-41b9-9b8d-28cb193bf822)
+
+  
 - To use a variable, you add $ in front of its name.
 - Hence `name` is the variable and `$name` is the value stored inside it
   
-![image](https://github.com/user-attachments/assets/93851167-0374-489f-a9c7-52b5aa6dc590)
+![image](https://github.com/user-attachments/assets/fc371b61-7d8d-46e7-9ec7-0abf03a5752e)
+
 
 - Variables help you avoid repeating the same text over and over, change values in one place instead of many and/or make scripts easier to read and fix
 - Instead of typing "Jammy" everywhere, you just use $name.
@@ -97,8 +99,9 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - This shows each command as it runs, what works, where errors happen which is great for understanding what your script is actually doing step by step.
 
 - You can turn debugging on and off inside your script:
-  
-![image](https://github.com/user-attachments/assets/8680cb55-a1e1-4721-a0fa-b0f8523e8509)
+
+![image](https://github.com/user-attachments/assets/4189ae1d-9f59-48c4-b3d6-76b1b82c10d0)
+
 
 - This is useful when you only want to debug a specific part.
 
@@ -111,7 +114,7 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - You’re not limited to just one variable, e.g. `echo "Hello $name, welcome back!"`
 - Bash will replace $name with its value automatically.
 
-![image](https://github.com/user-attachments/assets/a147a7d1-f817-4c96-892c-5319e9db5afe)
+![image](https://github.com/user-attachments/assets/7bd41f50-844b-4da5-aaaf-13728b370b16)
 
 ---
 ><details><summary>❓What would this code return?</summary>Jammy is 21 years old</details>
@@ -132,13 +135,14 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - When you run a bash script, you can pass values to it like this: `./example.sh Alex`
 - Inside the script `$1` is first argument, `$2` second argument, `$3` third argument, and so on…
   
-![image](https://github.com/user-attachments/assets/f0e9bc01-200e-49c8-98fc-69c5d7be5713)
-![image](https://github.com/user-attachments/assets/d94841b8-3008-4356-9496-b0ff4c5c5b0c)
+![image](https://github.com/user-attachments/assets/102414a7-a63c-4deb-8e13-2c1826ee9b1c)
 
 ## Interactive input with `read`
 - Sometimes you don’t want to pass values in the command line, instead, you want the script to ask the user for input.
 - You can do this with `read`: <br>
-![image](https://github.com/user-attachments/assets/1289d9f8-49bf-48be-9755-245e050f94ce)
+
+![image](https://github.com/user-attachments/assets/0dda4dd2-0b77-431d-a420-b78da78861e0)
+
 
 - When the script runs, it will pause and wait for you to type something.
 - Once you press Enter, it stores the input in the variable and prints it.
@@ -176,8 +180,8 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - Every item in an array has a number called an index.
 - Indexes always start at 0
 - e.g.: `['car', 'train', 'bike', 'bus']`
-  
-![image](https://github.com/user-attachments/assets/0466bca9-bb3a-413b-a648-57890bf6757f)
+
+![image](https://github.com/user-attachments/assets/fe6a991c-2af9-40f7-a3df-46f74e74d3b9)
 
 ### Creating an array in Bash
 
@@ -240,11 +244,13 @@ description: A Walkthrough room to teach you the basics of bash scripting
 ## if statement
 
 - Every if statement in Bash follows this pattern: <br>
-![image](https://github.com/user-attachments/assets/87670b15-90af-46d2-942c-b8deddd051b1)
+
+![image](https://github.com/user-attachments/assets/ae85a246-ed60-4fa5-bddd-f0a841a32fc1)
+
 - IMPORTANT: You must have spaces inside `[ ]` and `fi` ends the if statement (it’s `if` backwards)
 
 Example: <br>
-![image](https://github.com/user-attachments/assets/3047a57b-8748-439d-8f97-bfa3d857e473)
+![image](https://github.com/user-attachments/assets/3531f1ff-384f-4ffc-963a-d0df18c0351e)
 
 What’s happening:
   - `$count` is compared to `10`
@@ -265,8 +271,8 @@ What’s happening:
 ## Using parameters in conditionals
 
 - You can compare user input too.
-
-![image](https://github.com/user-attachments/assets/4c7426a3-e5b1-47d4-97e4-35f54363e4af)
+ 
+![image](https://github.com/user-attachments/assets/3316a45e-cc8a-4038-8bf7-3e94cd5e71ff)
 
 - Run it like this: `./example.sh guessme` (output will be `They are equal)
 - Run it with something else like: `./example.sh hi` (output will be `They are not equal)
@@ -278,6 +284,7 @@ What’s happening:
   - `-f` - does the file exist?
   - `-w` - is the file writable?
 
+![image](https://github.com/user-attachments/assets/6adf5c83-2353-4173-8b2b-f2215d6c9d96)
 
 ---
 ><details><summary>❓What is the flag to check if we have read access to a file?</summary>-r</details>
