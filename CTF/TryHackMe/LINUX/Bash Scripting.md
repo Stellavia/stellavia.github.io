@@ -1,3 +1,10 @@
+---
+layout: default
+title: Bash Scripting
+description: This is just another page
+---
+
+
 🔗 [Link to the Room](https://tryhackme.com/room/bashscripting)
 
 🔗 [Link for further learning](https://devhints.io/bash)
