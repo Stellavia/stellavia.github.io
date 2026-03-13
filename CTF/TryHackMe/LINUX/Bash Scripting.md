@@ -205,7 +205,7 @@
 
 &nbsp;
 
-<div class="tip">
+<div class=".tip">
 Extend your biography maker:
  - Store multiple names in an array
  - Store multiple facts (age, job, hobby)
