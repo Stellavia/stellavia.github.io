@@ -47,7 +47,7 @@ All communication is encrypted, keeping your data safe over the internet.
 
 SSH is like a secure remote control for a Linux machine.
 
-<img width="1360" height="489" alt="image" src="https://github.com/user-attachments/assets/dd366f7e-36fa-4dce-93cb-8544c7d32987" />
+![image](https://github.com/user-attachments/assets/dd366f7e-36fa-4dce-93cb-8544c7d32987)
 
 It's time for you to deploy your machines on thm.
 
