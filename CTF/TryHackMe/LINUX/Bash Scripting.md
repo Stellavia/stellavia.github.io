@@ -205,13 +205,13 @@
 
 &nbsp;
 
->[!TIP]
+<div class="tip">
 >Extend your biography maker:
 > - Store multiple names in an array
 > - Store multiple facts (age, job, hobby)
 > - Pick and display them dynamically
 > - This is exactly how real scripts evolve — small upgrades over time
-
+</div>
 &nbsp;
 
 ---
