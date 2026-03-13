@@ -4,4 +4,5 @@
 - [WINDOWS](WINDOWS/)
 - [AI](AI/)
 - [Malware](Malware/)
+- [Cloud](Cloud/)
 
