@@ -13,3 +13,4 @@ I hope it can be a useful resource for you :)
 
 # Modules:
 - [Introduction to Web Hacking](Introduction-to-Web-Hacking/)
+- [Memory Analysis](Memory-Analysis/)
