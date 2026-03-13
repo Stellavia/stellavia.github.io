@@ -62,7 +62,6 @@ description: A Walkthrough room to teach you the basics of bash scripting
   - Then run it with `./yourfile.sh`
   - The ./ means “run this file from the current directory.”
 
->[!IMPORTANT]
 > - Always include #!/bin/bash at the top of your script (even if examples don’t show it)
 > - Basic Linux command knowledge is assumed
 > - The best way to learn Bash is by running the commands yourself and experimenting
@@ -80,11 +79,13 @@ description: A Walkthrough room to teach you the basics of bash scripting
 
 - In Bash, you create a variable like this: `name="Jammy"`
 - Important rules: No spaces around `=` and variable names **can’t contain spaces**
-<img width="502" height="236" alt="carbon-2" src="https://github.com/user-attachments/assets/7fcb4243-49a7-48b1-98d6-1aab41960634" />
+  
+![image](https://github.com/user-attachments/assets/7fcb4243-49a7-48b1-98d6-1aab41960634)
 
 - To use a variable, you add $ in front of its name.
 - Hence `name` is the variable and `$name` is the value stored inside it
-<img width="678" height="308" alt="carbon-3" src="https://github.com/user-attachments/assets/93851167-0374-489f-a9c7-52b5aa6dc590" />
+  
+![image](https://github.com/user-attachments/assets/93851167-0374-489f-a9c7-52b5aa6dc590)
 
 - Variables help you avoid repeating the same text over and over, change values in one place instead of many and/or make scripts easier to read and fix
 - Instead of typing "Jammy" everywhere, you just use $name.
@@ -96,7 +97,9 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - This shows each command as it runs, what works, where errors happen which is great for understanding what your script is actually doing step by step.
 
 - You can turn debugging on and off inside your script:
-<img width="982" height="452" alt="carbon-4" src="https://github.com/user-attachments/assets/8680cb55-a1e1-4721-a0fa-b0f8523e8509" />
+  
+![image](https://github.com/user-attachments/assets/8680cb55-a1e1-4721-a0fa-b0f8523e8509)
+
 - This is useful when you only want to debug a specific part.
 
 - When debugging `+` means the command ran - The output shows what the command produced.
@@ -108,8 +111,7 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - You’re not limited to just one variable, e.g. `echo "Hello $name, welcome back!"`
 - Bash will replace $name with its value automatically.
 
-<img width="982" height="524" alt="carbon-7" src="https://github.com/user-attachments/assets/a147a7d1-f817-4c96-892c-5319e9db5afe" />
-
+![image](https://github.com/user-attachments/assets/a147a7d1-f817-4c96-892c-5319e9db5afe)
 
 ---
 ><details><summary>❓What would this code return?</summary>Jammy is 21 years old</details>
@@ -129,13 +131,14 @@ description: A Walkthrough room to teach you the basics of bash scripting
 
 - When you run a bash script, you can pass values to it like this: `./example.sh Alex`
 - Inside the script `$1` is first argument, `$2` second argument, `$3` third argument, and so on…
-<img width="898" height="452" alt="carbon-13" src="https://github.com/user-attachments/assets/f0e9bc01-200e-49c8-98fc-69c5d7be5713" />
-<img width="762" height="452" alt="carbon-14" src="https://github.com/user-attachments/assets/d94841b8-3008-4356-9496-b0ff4c5c5b0c" />
+  
+![image](https://github.com/user-attachments/assets/f0e9bc01-200e-49c8-98fc-69c5d7be5713)
+![image](https://github.com/user-attachments/assets/d94841b8-3008-4356-9496-b0ff4c5c5b0c)
 
 ## Interactive input with `read`
 - Sometimes you don’t want to pass values in the command line, instead, you want the script to ask the user for input.
 - You can do this with `read`: <br>
-<img width="101" height="60" alt="image" src="https://github.com/user-attachments/assets/1289d9f8-49bf-48be-9755-245e050f94ce" />
+![image](https://github.com/user-attachments/assets/1289d9f8-49bf-48be-9755-245e050f94ce)
 
 - When the script runs, it will pause and wait for you to type something.
 - Once you press Enter, it stores the input in the variable and prints it.
@@ -173,7 +176,8 @@ description: A Walkthrough room to teach you the basics of bash scripting
 - Every item in an array has a number called an index.
 - Indexes always start at 0
 - e.g.: `['car', 'train', 'bike', 'bus']`
-<img width="584" height="300" alt="image" src="https://github.com/user-attachments/assets/0466bca9-bb3a-413b-a648-57890bf6757f" />
+  
+![image](https://github.com/user-attachments/assets/0466bca9-bb3a-413b-a648-57890bf6757f)
 
 ### Creating an array in Bash
 
@@ -236,16 +240,17 @@ description: A Walkthrough room to teach you the basics of bash scripting
 ## if statement
 
 - Every if statement in Bash follows this pattern: <br>
-<img width="335" height="153" alt="image" src="https://github.com/user-attachments/assets/87670b15-90af-46d2-942c-b8deddd051b1" />
+![image](https://github.com/user-attachments/assets/87670b15-90af-46d2-942c-b8deddd051b1)
 - IMPORTANT: You must have spaces inside `[ ]` and `fi` ends the if statement (it’s `if` backwards)
 
 Example: <br>
-<img width="167" height="202" alt="image" src="https://github.com/user-attachments/assets/3047a57b-8748-439d-8f97-bfa3d857e473" />
+![image](https://github.com/user-attachments/assets/3047a57b-8748-439d-8f97-bfa3d857e473)
 
 What’s happening:
   - `$count` is compared to `10`
   - `-eq` means “equal to”
-  - Since 10 = 10, it prints: <img width="62" height="31" alt="image" src="https://github.com/user-attachments/assets/f694382a-ec90-4dcc-a6c7-8c228ac8f2dd" />
+  - Since 10 = 10, it prints:
+    ![image](https://github.com/user-attachments/assets/f694382a-ec90-4dcc-a6c7-8c228ac8f2dd)
 
 ## Common comparison operators
 
@@ -261,7 +266,8 @@ What’s happening:
 
 - You can compare user input too.
 
-<img width="253" height="157" alt="image" src="https://github.com/user-attachments/assets/4c7426a3-e5b1-47d4-97e4-35f54363e4af" />
+![image](https://github.com/user-attachments/assets/4c7426a3-e5b1-47d4-97e4-35f54363e4af)
+
 - Run it like this: `./example.sh guessme` (output will be `They are equal)
 - Run it with something else like: `./example.sh hi` (output will be `They are not equal)
 
