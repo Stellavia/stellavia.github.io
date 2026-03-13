@@ -1,6 +1,6 @@
 Hi there!  
 
-I’m Stella, and this is my **personal space** for collecting and sharing knowledge. Here, you’ll find notes, guides, and tips on topics I’m passionate about.
+I’m Stella, and this is my **personal space** for collecting and sharing knowledge. Here, you’ll find notes, guides, and tips on IT topics.
 
 This hub is designed to be practical, **beginner-friendly**, and easy to explore.
 
