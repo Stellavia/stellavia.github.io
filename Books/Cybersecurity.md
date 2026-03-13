@@ -5,4 +5,4 @@ description: These are books that I found interesting and recommend for further 
 ---
 
 Ghost In The Wires by Kevin Mitnick and William L. Simon <br>
-![Book cover](Books/Assets/book-cover-ghost-in-the-wires.png)
+![Book cover](Assets/book-cover-ghost-in-the-wires.png)
