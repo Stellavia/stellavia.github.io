@@ -8,7 +8,6 @@ description: Learn what network analysis is, why it is essential, how to collect
 
 ## 🏷️ Table of Contents
 
-
 1. [What is the Purpose of Network Traffic Analysis](#what-is-the-purpose-of-network-traffic-analysis)<br>
 2. [What Network Traffic can we observe?](#what-network-traffic-can-we-observe)<br>
 2.1 [Application Layer](#application-layer)<br>
@@ -50,7 +49,8 @@ NTA is more than just using tools like Wireshark — it combines log correlation
 - Basic logs (like DNS logs from a firewall) show metadata such as source IP, queried domain, query type, and timestamps.
 - However, they usually do not show the actual content of the communication.
 
-<img width="910" height="121" alt="image" src="https://github.com/user-attachments/assets/13c7bd7d-0605-4cac-a828-6a1fa2a51633" />
+![image](https://github.com/user-attachments/assets/0cce753a-224f-4386-bbf2-41ec20e45deb)
+
 
 
 - For example, repeated DNS queries to the same domain with different subdomains may indicate **DNS tunneling** or **beaconing**.
@@ -58,7 +58,9 @@ NTA is more than just using tools like Wireshark — it combines log correlation
 - This deeper inspection allows analysts to confirm whether the activity is malicious.
 
 - The packet capture fragment below shows the content of a DNS reply that contains C2 commands:
-<img width="555" height="318" alt="image" src="https://github.com/user-attachments/assets/732aebfb-4f66-4a3f-ace5-059d3e53de0a" />
+  
+![image](https://github.com/user-attachments/assets/8e91a639-79aa-4f63-8a3a-88a5d0f98042)
+
 
 - Logs provide limited visibility — mostly metadata, not full content.
 - Repeated or unusual DNS queries may indicate tunneling or beaconing.
@@ -82,7 +84,7 @@ NTA is more than just using tools like Wireshark — it combines log correlation
 
 # What Network Traffic can we observe?
 
-<img width="1370" height="457" alt="image" src="https://github.com/user-attachments/assets/c2f3c1bd-7dbb-4845-b6f0-660e36735de8" />
+![image](https://github.com/user-attachments/assets/ca0c8ea1-0e8c-4a13-bf0f-d61136b6f76e)
 
 &nbsp;
 
@@ -93,7 +95,7 @@ NTA is more than just using tools like Wireshark — it combines log correlation
 
 - For example, in an HTTP request we can see the requested file (e.g., suspicious_package.zip), the server response code (e.g., 200 OK), metadata like content type and file size.
   
-<img width="583" height="515" alt="image" src="https://github.com/user-attachments/assets/56092a1c-3e5b-4925-800d-6b96054ed95c" />
+![image](https://github.com/user-attachments/assets/d75e7a7b-f267-4b04-945f-4c134a81b9e5)
 
 &nbsp;
 
@@ -160,7 +162,7 @@ NTA is more than just using tools like Wireshark — it combines log correlation
 
 &nbsp;
 
-<img width="1298" height="195" alt="image" src="https://github.com/user-attachments/assets/965d7f69-1632-47ca-88af-409883efacf1" />
+![image](https://github.com/user-attachments/assets/871522cc-9b77-4ae9-9f95-601da9b7c983)
 
 &nbsp;
 
@@ -271,7 +273,8 @@ Each TCP/IP layer gives us different visibility into network behavior. Logs only
 
 - A host requests a website; this request is sent to the NGFW, which includes a web proxy. The web proxy will act as the web server and simultaneously establish a new TCP session with the actual web server and forward the clients' requests. When the web proxy receives the answer from the web server, it inspects its contents and then forwards it to the host if deemed safe. To summarize, we have two sessions, one between the client and the proxy and the other between the proxy and the web server. From the client's point of view, it has established a session with the web server.
 
-<img width="1210" height="212" alt="image" src="https://github.com/user-attachments/assets/024b2cad-24a6-44d5-abc3-c59cb096f2ad" />
+![image](https://github.com/user-attachments/assets/a1332a81-578f-43ee-9b27-1c031e4c22c4)
+
 
 - There are actually two TCP sessions: <br>
   \1. Client ↔ Proxy <br>
@@ -291,7 +294,7 @@ Each TCP/IP layer gives us different visibility into network behavior. Logs only
 
 - DNS traffic within a corporate network starts when a host sends a DNS query. The host sends the query to the internal DNS server on port 53, which will then act on behalf of the host. First, it will check if it has an answer to the query in its cache; if not, it will send the query via the router, through the firewall, to the configured DNS servers. The answer will then follow the same path to the internal DNS server, which will then forward it to the host. The network diagram below shows a simplified flow.
 
-<img width="1030" height="350" alt="image" src="https://github.com/user-attachments/assets/db2cdc3e-fe43-4e6b-91cc-4c61b42de381" />
+![image](https://github.com/user-attachments/assets/cd4064e8-e2e2-41cf-97d1-bc2641455d86)
 
 - The internal DNS server acts on behalf of the host, caches results and controls resolution
 
@@ -307,10 +310,7 @@ Each TCP/IP layer gives us different visibility into network behavior. Logs only
   Host > Domain Controller (Kerberos ticket)
   Host > File Server (SMB session using ticket)
 
-  
-<img width="1060" height="510" alt="image" src="https://github.com/user-attachments/assets/62bd40e2-9d52-4a91-8fbf-0cba8b94fb7a" />
-
-
+![image](https://github.com/user-attachments/assets/b49ffcd6-d8e6-4155-8e44-4f14678c3e47)
 
 - When a host opens a share to, for example, \\FILESERVER\MARKETING, an SMB session is set up. First, authentication is done via Kerberos. When a user logged in on the host, it authenticated with the Key Distribution Center on the Domain Controller and received a Ticket Granting Ticket to request "service authentication tickets". Now, the host requests a service ticket using the Ticket Granting Ticket it received earlier. The host then uses this ticket to establish the SMB connection. Once the SMB session is set up, the host can access the share. Below we see a simplified network diagram of the flow.
 
@@ -356,7 +356,9 @@ Each TCP/IP layer gives us different visibility into network behavior. Logs only
 - They do NOT log full packets - No full payload, No complete TCP headers, No fragment offsets, No full context
 
 - example: **Linux authentication log Syslog format** and **Apache Access Log CLF format**:
-<img width="992" height="148" alt="image" src="https://github.com/user-attachments/assets/c2068421-8089-4750-b4c0-40adb0913f28" />
+
+![image](https://github.com/user-attachments/assets/43c302c4-b329-4d1b-8bb4-a8e4cb28de12)
+
 - We can see user `gensane`, source IP `192.168.1.50`, port `52234`, service `SSH`, status `Accepted`, but we cannot see the password or packet contents.
 - In the Apache log we can see client IP, timestamp, HTTP method, resource requested, response code (200), response size, user-agent, but we cannot see full HTTP headers or payload and file content.
 
@@ -395,8 +397,8 @@ Everything.
 ## How to Capture Full Packets
 
 - There are two primary methods: a **TAP (Test Access Point)** and **Port Mirroring (SPAN)**
-- 
-<img width="824" height="552" alt="image" src="https://github.com/user-attachments/assets/2604bdf7-8104-4ccd-b0ff-8624cd4d6d2b" />
+
+![image](https://github.com/user-attachments/assets/542f97db-2098-4dee-90b8-9188c16eebab)
 
 &nbsp;
 
@@ -417,7 +419,7 @@ Everything.
 - The switch duplicates packets from one interface to another.
 - Example (Cisco SPAN):
 
-<img width="724" height="96" alt="image" src="https://github.com/user-attachments/assets/cdb1f29d-eda6-475a-ab57-f3a2f7fd5ab2" />
+![image](https://github.com/user-attachments/assets/3b425cf9-df07-448b-b07f-f2023a1501d1)
 
 - meaning:
   - Traffic entering/exiting Fa0/1
@@ -441,8 +443,7 @@ Everything.
 
 - High throughput mirrored ports can cause dropped packets or performance degradation
 
-
-<img width="463" height="347" alt="image" src="https://github.com/user-attachments/assets/c8a84639-29cb-496f-a488-51c9a91e4a5d" />
+![image](https://github.com/user-attachments/assets/2cdd1dfa-3307-4171-991f-95bf9af9fe0f)
 
 &nbsp;
 
@@ -498,7 +499,8 @@ Everything.
 - It does **NOT** capture payloads.
 
 - NetFlow output example:
-<img width="385" height="486" alt="image" src="https://github.com/user-attachments/assets/1d37cd5c-966d-424c-b6cf-3453b989c6c4" />
+![img](https://github.com/user-attachments/assets/18e6e8cd-1fc7-4175-8ce3-5bd06cabb966)
+
 
 ### IPFIX
 
@@ -512,7 +514,9 @@ Everything.
 
 
 ---  
-><details><summary>❓What is the lag found in the HTTP traffic in scenario 1? The flag has the format THM{}</summary>THM{***************}</details>
+><details><summary>❓What is the lag found in the HTTP traffic in scenario 1? The flag has the format THM{}</summary>THM{F*************E}</details>
+<!-- THM{FoundTheMalware} -->
 ---  
-><details><summary>❓What is the flag found in the DNS traffic in scenario 2? The flag has the format THM{}</summary>THM{**************}</details>
+><details><summary>❓What is the flag found in the DNS traffic in scenario 2? The flag has the format THM{}</summary>THM{C************d}</details>
+<!-- THM{C2CommandFound} -->
 ---
