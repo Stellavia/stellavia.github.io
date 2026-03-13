@@ -17,3 +17,4 @@ nav:
 - Home: "/"
 - CTF: "/CTF/" 
 - TryHackMe: "/CTF/TryHackMe/"
+- LINUX: "/CTF/TryHackMe/LINUX/"
