@@ -61,7 +61,8 @@ They direct, filter, and protect network traffic.
 
 &nbsp;
 
-<img width="1140" height="449" alt="image" src="https://github.com/user-attachments/assets/7fc38e2e-bcc6-4d9b-ae48-d08cb777bc20" />
+![image](https://github.com/user-attachments/assets/d30884bc-3469-4ad0-b251-faf0686daace)
+
 
 ## Common Threats and Attack Vectors of Network Devices
 
@@ -164,9 +165,6 @@ Hardening VPNs means adding extra security to make them safer from cyberattacks.
 
 These steps make it harder for hackers to access the network and help keep data safe, improving overall security and peace of mind.
 
-<img width="550" height="284" alt="image" src="https://github.com/user-attachments/assets/d84e515d-3aac-440f-925d-065776bd4f1a" />
-
-
 ## Connecting to the Machine
 
 In this room we are using an Ubuntu machine with OpenVPN installed roughout the room. You can start the virtual machine by clicking Start Machine. The machine will start in a split-screen view. In case the VM is not visible, use the blue Show Split View button at the top-right of the page. Please wait 3-5 minutes to make sure the VM is fully booted.
@@ -187,14 +185,17 @@ In this room we are using an Ubuntu machine with OpenVPN installed roughout the 
   - Configure the VPN gateway to use strong encryption to protect data in transit. The cipher directive in the config file can be used to select the encryption scheme.<br>
   - The possible options for cipher include AES, Blowfish, Camellia, and more.
   - E.g. AES-128-CBC mode means to use the AES encryption algorithm with a key size of 128-bit in Cipher Block Chaining (CBC) mode, as seen below. AES-256-CBC is typically considered one of the strongest cipher encryption nowadays.<br>
-<img width="469" height="276" alt="image" src="https://github.com/user-attachments/assets/92e2ed7a-c603-4c39-8441-3d3f187b5507" />
+
+![image](https://github.com/user-attachments/assets/9b356ef1-c36d-4b66-b345-c8f6b0e0cc23)
+
 
 - **Keep VPN software updated**: Regularly apply updates and security patches of the VPN gateway software. e.g. `sudo apt upgrade openvpn`
 
 - **Implement strong authentication**: Use secure hashing algorithms (SHA256, SHA512, etc.) with TLS.
   -  We can use the auth directive to specify the exact algorithm in the OpenVPN configuration file to ensure that a secure hashing algorithm will be used for packet authentication. 
     
-<img width="481" height="270" alt="image" src="https://github.com/user-attachments/assets/e3ff0ec1-0503-426e-9055-655971118f79" />
+![image](https://github.com/user-attachments/assets/ab17d7d7-f167-417d-b52f-41cfa315cefb)
+
 
 - **Change default settings**: Replace default usernames and passwords with unique ones to prevent unauthorized access.
 
@@ -203,7 +204,7 @@ In this room we are using an Ubuntu machine with OpenVPN installed roughout the 
   - Generate key: `sudo openvpn --genkey --secret my.key` and should be placed in the same directory on the server.
   - Choosing the appropriate cipher and auth, like cipher AES-256-CBC and auth SHA 256, supports PFS if combined with tls-crypt.
 
-<img width="527" height="309" alt="image" src="https://github.com/user-attachments/assets/501a0159-40c4-40b9-8a10-408e4fdffe71" />
+![image](https://github.com/user-attachments/assets/ec2b5f35-6248-4523-b268-7893ef021395)
 
 &nbsp;
 
@@ -250,7 +251,8 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp; 
 
-<img width="950" height="582" alt="image" src="https://github.com/user-attachments/assets/bc3b21f0-9236-4a51-b3f7-3e015bcc61bc" />
+![image](https://github.com/user-attachments/assets/cd2f82ef-5dbf-447b-920f-e719da5f8af2)
+
 
 &nbsp;
 
@@ -259,7 +261,8 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp;
 
-<img width="970" height="404" alt="image" src="https://github.com/user-attachments/assets/37f86bbc-5839-419c-b5eb-ea4786b4acd6" />
+![image](https://github.com/user-attachments/assets/3ea8acda-9233-4656-baf9-8b71cc3eb5a8)
+
 
 &nbsp;
 
@@ -270,7 +273,7 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp;
 
-<img width="986" height="645" alt="image" src="https://github.com/user-attachments/assets/952d844d-1976-4d46-8076-22c86252f8ad" />
+![image](https://github.com/user-attachments/assets/44c2d5d6-c0ff-41b5-8bde-827127fdf18b)
 
 &nbsp;
 
@@ -281,7 +284,8 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp;
 
-<img width="955" height="646" alt="image" src="https://github.com/user-attachments/assets/0c72b403-d2d9-45a4-99a6-d4fd17b9dc21" />
+![image](https://github.com/user-attachments/assets/a972f4b9-49dd-4d91-80c4-223d28993d1c)
+
 
 &nbsp;
 
@@ -319,7 +323,8 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp;
 
-<img width="947" height="648" alt="image" src="https://github.com/user-attachments/assets/0e140f81-ad3a-4040-8420-db43b51a283f" />
+![image](https://github.com/user-attachments/assets/434ad85d-20e0-4235-876a-444d3e30375a)
+
 
 &nbsp;
 
@@ -330,7 +335,8 @@ It also improves performance, strengthens protection against cyberattacks, and s
 
 &nbsp;
 
-<img width="956" height="550" alt="image" src="https://github.com/user-attachments/assets/d1cacc15-51cf-4e16-ac7c-d977deb17de9" />
+![image](https://github.com/user-attachments/assets/e4d02fc9-e4cc-4d6e-aa22-e3a3dcd19412)
+
 _Note: Since no client is connected with the network device, you won't see any traffic in the real-time traffic statistics on the target machine._ 
 
 &nbsp;
@@ -342,7 +348,7 @@ _Note: Since no client is connected with the network device, you won't see any t
 
 &nbsp;
 
-<img width="960" height="419" alt="image" src="https://github.com/user-attachments/assets/b441cf97-0496-4b7e-8141-9652b94bcd9e" />
+![image](https://github.com/user-attachments/assets/888f40eb-ee2a-4966-a08d-9732624c1f7a)
 
 &nbsp;
 
@@ -352,7 +358,8 @@ _Note: Since no client is connected with the network device, you won't see any t
 
 &nbsp;
 
-<img width="958" height="221" alt="image" src="https://github.com/user-attachments/assets/bc47d76b-ff8e-40df-b905-e134234ef6b4" />
+![image](https://github.com/user-attachments/assets/d414f70b-0aa3-4449-83b8-917465d4151e)
+
 
 &nbsp;
 
@@ -362,7 +369,8 @@ _Note: Since no client is connected with the network device, you won't see any t
 
 &nbsp;
 
-<img width="956" height="633" alt="image" src="https://github.com/user-attachments/assets/a37f0f35-b7b1-471f-8804-7c7601d4ff52" />
+![image](https://github.com/user-attachments/assets/dba056d8-95e6-4e69-b9b9-a9383ea5049a)
+
 
 &nbsp;
 
