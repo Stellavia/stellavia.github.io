@@ -1,4 +1,7 @@
-# TryHackMe Labs
+After completing over 444 rooms on TryHackMe, I decided to consolidate my learning and create a repository with complete solutions for each room I solved. <br>
+I hope it can be a useful resource for you :)
+
+Rooms:
 
 - [LINUX](LINUX/) 
 - [WINDOWS](WINDOWS/)
