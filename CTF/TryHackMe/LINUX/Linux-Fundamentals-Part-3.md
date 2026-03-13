@@ -27,8 +27,6 @@ description: Power-up your Linux skills and get hands-on with some common utilit
   5.2 [Managing Your Repositories - Adding and Removing](#managing-your-repositories---adding-and-removing)<br>
 6. [Maintaining Your System: Logs](#maintaining-your-system-logs)<br>
 
-&nbsp;
-
 ---
 # Terminal Text Editors
 
