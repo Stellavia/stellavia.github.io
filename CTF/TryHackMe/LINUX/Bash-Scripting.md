@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bash Scripting
-description: This is just another page
+description: A Walkthrough room to teach you the basics of bash scripting
 ---
 
 
@@ -9,7 +9,7 @@ description: This is just another page
 
 🔗 [Link for further learning](https://devhints.io/bash)
 
-## 🏷️ A Walkthrough room to teach you the basics of bash scripting
+## 🏷️ Table of Contents
 
 1. [Our first simple bash scripts](#our-first-simple-bash-scripts)<br>
 2. [Variables](#variables)<br>
