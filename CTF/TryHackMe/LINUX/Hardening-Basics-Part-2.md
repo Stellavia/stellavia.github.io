@@ -40,6 +40,7 @@ description: Continue learning about hardening
 12. [Chapter 4 Quiz](#chapter-4-quiz)<br>
 13. [Chapter 3: SSH and Encryption](#chapter-3-ssh-and-encryption)<br>
 
+---
 
 # 📚 Study Notes #
 
@@ -70,8 +71,6 @@ description: Continue learning about hardening
 ---
 
 # GNU Privacy Guard
-
-<img width="636" height="261" alt="image" src="https://github.com/user-attachments/assets/6282cc87-bf17-42aa-83c6-1580a3e43c91" />
 
 - To understand GPG, you first need to understand PGP, the system it’s based on.
 
@@ -228,7 +227,6 @@ Example
 > Correct permissions on .ssh and authorized_keys are critical
 >
 
-
 # Disable Username and Password SSH Login
 
 - Verify that your key exchange login works, otherwise you might lock yourself or other users out of the system.
@@ -242,7 +240,6 @@ Example
 ## Turn off X11 Forwarding
 
 - To turn off X11 Forwarding you need to change setting in `sshd_config` specifically `X11 Forwarding yes` to `X11 Forwarding no`
-<img width="229" height="352" alt="image" src="https://github.com/user-attachments/assets/34a1dd7a-2986-46f4-b209-42761ae1e709" />
 
 ## SSH Tunneling
 
@@ -253,7 +250,9 @@ Example
   - Can be abused to create unauthorized tunnels into your network
 
 - To disable it, in `/etc/ssh/sshd_config`, set these options: 
-<img width="177" height="83" alt="image" src="https://github.com/user-attachments/assets/ac133a99-febf-4854-ae9f-b024e5ca58d8" />
+
+![image](https://github.com/user-attachments/assets/fd5e7711-2c4d-4ba9-9428-b7df7eea8358)
+
 
 - Afterwards restart ssh with `sudo systemctl restart sshd`
 - This hardens SSH and prevents unauthorized port forwarding or tunneling.
@@ -270,7 +269,8 @@ Example
 - A log file is created any time someone logs in with a Protocol that uses SSH.
 - By default, Ubuntu stores this log file in /var/log/auth.log
 
-<img width="934" height="322" alt="image" src="https://github.com/user-attachments/assets/1990c1e8-84ea-454c-bc81-8a7cff712bbe" />
+![image]https://github.com/user-attachments/assets/4b6d1491-a42f-4c95-ab41-8702cfbc604e)
+
 
 - There's a few different levels of logging that you can find in the man pages of `sshd_config`: QUIET, FATAL, ERROR, INFO, VERBOSE, DEBUG1, DEBUG2, DEBUG3
 - INFO is the default setting.
