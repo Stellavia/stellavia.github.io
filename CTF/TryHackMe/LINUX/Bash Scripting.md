@@ -200,18 +200,16 @@
 - You can assign a new value to a specific index by `transport[1]='trainride'`
 - Now the array becomes `car trainride bike bus`
 
->[.note]
-> Arrays are great when you need to store multiple values of the same type, loop through data, organize inputs cleanly, build more advanced scripts (automation, security checks, etc.)
+>
+> Arrays are great when you need to store multiple values of the same type, loop through data, organize inputs <br>
+>cleanly, build more advanced scripts (automation, security checks, etc.)<br>
 
-&nbsp;
 
-<div class=".tip">
-Extend your biography maker:
- - Store multiple names in an array
- - Store multiple facts (age, job, hobby)
- - Pick and display them dynamically
- - This is exactly how real scripts evolve — small upgrades over time
-</div>
+>Extend your biography maker: <br>
+> - Store multiple names in an array <br>
+> - Store multiple facts (age, job, hobby) <br>
+> - Pick and display them dynamically <br>
+> - This is exactly how real scripts evolve — small upgrades over time <br>
 
 &nbsp;
 
