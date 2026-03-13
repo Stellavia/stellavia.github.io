@@ -5,3 +5,4 @@
 - [Linux-Fundamentals-Part-3](Linux-Fundamentals-Part-3.md)
 - [Linux-Incident-Surface](Linux-Incident-Surface.md)
 - [Linux-Live-Analysis](Linux-Live-Analysis.md)
+- [Linux-System-Hardening](Linux-System-Hardening.md)
