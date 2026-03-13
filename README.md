@@ -8,7 +8,7 @@ Feel free to dive into the sections, experiment with the examples, and use this 
 
 So far I created these sections:
 
-- [CTF](CTF/) - my notes from different THM rooms
+- [CTF](CTF/) - my notes & solutions from different THM rooms
 - [Books](Books/) - some interesting books to check
 
 
