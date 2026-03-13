@@ -6,8 +6,8 @@
 }
 
 .tip {
-  border-left: 4px solid lightblue;
-  padding: 0.5em 1em;
-  background-color: #e1f5fe;
-  margin: 1em 0;
+  border-left: 4px solid lightblue !important;
+  padding: 0.5em 1em !important;
+  background-color: #e1f5fe !important;
+  margin: 1em 0 !important;
 }
