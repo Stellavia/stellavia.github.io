@@ -1,6 +1,7 @@
 <!--
 ---
 title: Bash Scripting
+permalink: /BashScripting/
 ---
 -->
 
