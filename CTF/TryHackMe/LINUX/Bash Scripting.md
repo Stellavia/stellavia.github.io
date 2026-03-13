@@ -127,7 +127,7 @@
 
 ## Interactive input with `read`
 - Sometimes you don’t want to pass values in the command line, instead, you want the script to ask the user for input.
-- You can do this with `read`:
+- You can do this with `read`: <br>
 <img width="101" height="60" alt="image" src="https://github.com/user-attachments/assets/1289d9f8-49bf-48be-9755-245e050f94ce" />
 
 - When the script runs, it will pause and wait for you to type something.
@@ -228,11 +228,11 @@
 
 ## if statement
 
-- Every if statement in Bash follows this pattern:
+- Every if statement in Bash follows this pattern: <br>
 <img width="335" height="153" alt="image" src="https://github.com/user-attachments/assets/87670b15-90af-46d2-942c-b8deddd051b1" />
 - IMPORTANT: You must have spaces inside `[ ]` and `fi` ends the if statement (it’s `if` backwards)
 
-Example:
+Example: <br>
 <img width="167" height="202" alt="image" src="https://github.com/user-attachments/assets/3047a57b-8748-439d-8f97-bfa3d857e473" />
 
 What’s happening:
