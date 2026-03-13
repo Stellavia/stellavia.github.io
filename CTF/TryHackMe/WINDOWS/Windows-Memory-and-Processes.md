@@ -37,7 +37,7 @@ description: Analyze a memory dump of a Windows host and uncover malicious proce
 - The incident (THM-0001) was escalated on May 5th, 2025, after a potentially compromised Windows system (WIN-001) was identified.
 - A full memory dump was taken to preserve evidence, including host details, timestamp, and hash to ensure integrity.
 
-<img width="5084" height="3320" alt="image" src="https://github.com/user-attachments/assets/3aea08b2-e4e5-49b1-9a8b-6f3059c35a10" />
+![image](https://github.com/user-attachments/assets/3aea08b2-e4e5-49b1-9a8b-6f3059c35a10)
 
 # Windows Process Architecture
 
