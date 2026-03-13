@@ -1,1 +1,2 @@
 - [Cloud-Computing-Fundamentals](Cloud-Computing-Fundamentals.md)
+- [Cloud-Security-Pitfalls](Cloud-Security-Pitfalls.md)
