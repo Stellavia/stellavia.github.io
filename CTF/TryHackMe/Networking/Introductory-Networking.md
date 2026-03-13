@@ -6,7 +6,7 @@ description: An introduction to networking theory and basic networking tools.
 
 🔗 [Link to the Room](https://tryhackme.com/room/introtonetworking)
 
-## 🏷️ An introduction to networking theory and basic networking tools
+## 🏷️ Table of Contents
 
 1. [The OSI Model: An Overview](#the-osi-model-an-overview) <br>
 2. [Encapsulation](#encapsulation) <br>
@@ -148,7 +148,8 @@ description: An introduction to networking theory and basic networking tools.
 - This entire process of adding layer-specific information is known as encapsulation.
 - It allows data to be sent reliably from one computer to another.
 
-<img width="1718" height="822" alt="image" src="https://github.com/user-attachments/assets/bb6808b7-e21e-4474-8077-3c57cbfd0a6f" />
+![image](https://github.com/user-attachments/assets/8b70edc7-0915-4679-83df-0f0e2f1b8786)
+
 
 ## Encapsulation Process (Data Naming)
 
@@ -171,7 +172,7 @@ By the time the data is transmitted across the network, the frame has been broke
 - This process is called de-encapsulation, and it continues until the data reaches the Application layer, where it can be used by the receiving application.
 
 ---  
-><details><summary>❓</summary>How would you refer to data at layer 2 of the encapsulation process (with the OSI model)?</summary>Frames</details>
+><details><summary>❓How would you refer to data at layer 2 of the encapsulation process (with the OSI model)?</summary>Frames</details>
 ---  
 ><details><summary>❓How would you refer to data at layer 4 of the encapsulation process (with the OSI model), if the UDP protocol has been selected?</summary>Datagrams</details>
 ---  
@@ -230,6 +231,8 @@ While this interpretation is widely accepted, the official definition remains th
 
 - Once this handshake is complete a reliable connection is established, data can be transmitted safely, lost or corrupted data is re-sent, making the connection appear lossless
 
+![image](https://github.com/user-attachments/assets/4558fc03-9162-422f-870a-ee3ceb936712)
+
 ## History
 
 - Originally, there was no standardisation in networking.
@@ -241,9 +244,6 @@ While this interpretation is widely accepted, the official definition remains th
 - Later, the OSI model was introduced by the International Organization for Standardization (ISO)
 
 - Today TCP/IP remains the foundation of modern networking and OSI is mainly used as a structured learning and reference model
-
-<img width="533" height="376" alt="image" src="https://github.com/user-attachments/assets/c5723e27-573d-4b99-a6ec-617bd289cf35" />
-
 
 ---  
 ><details><summary>❓Which model was introduced first, OSI or TCP/IP?</summary>TCP/IP</details>
@@ -278,14 +278,13 @@ While this interpretation is widely accepted, the official definition remains th
 
 - `ping` sends ICMP echo requests and waits for echo replies - A successful reply indicates that the target is reachable
 
-<img width="446" height="34" alt="image" src="https://github.com/user-attachments/assets/444a7a9c-f538-4ff3-b884-17768b635fcf" />
+![image](https://github.com/user-attachments/assets/99ecc607-1f61-4859-be82-d7779f878a39)
+
 
 - When pinging a website, the command resolves the **domain name to an IP address** and displays the IP address of the server being contacted
 - This makes `ping` useful not only for connectivity testing, but also for identifying the IP address associated with a domain.
 
 - For additional options and syntax details on Linux, you can use `man ping`.
-
-
 
 ---  
 ><details><summary>❓What command would you use to ping the bbc.co.uk website?</summary>ping bbc.co.uk</details>
@@ -343,8 +342,8 @@ While this interpretation is widely accepted, the official definition remains th
 
 
 - On the picture below you can see that it took 13 hops to get from router (_gateway) to the Google server at 216.58.205.46
-<img width="811" height="252" alt="image" src="https://github.com/user-attachments/assets/c5ea8014-2c5a-4234-8d51-a64cc95d6dcb" />
-
+  
+![image](https://github.com/user-attachments/assets/8dd60a72-bf36-4375-9770-a7a7493f2a26)
 
 ---  
 ><details><summary>❓What switch would you use to specify an interface when using Traceroute?</summary>-i</details>
@@ -379,8 +378,8 @@ While this interpretation is widely accepted, the official definition remains th
 - On Debian-based systems, `WHOIS` may need to be installed manually by running ` sudo apt update && sudo apt-get install whois`
 
 - `Whois lookups` are very easy to perform. Just use `whois <domain>` to get a list of available information about the domain registration:
-<img width="928" height="438" alt="image" src="https://github.com/user-attachments/assets/eccb47df-55a3-46f1-a117-619aa70c1853" />
 
+![image](https://github.com/user-attachments/assets/eecc0931-147c-4a79-b522-b581a13330c1)
 
 
 ---  
@@ -450,7 +449,7 @@ While this interpretation is widely accepted, the official definition remains th
 - Useful for troubleshooting DNS issues
 - syntax: `dig <domain> @<dns-server-ip>`
 
-<img width="616" height="366" alt="image" src="https://github.com/user-attachments/assets/9ccc0ab0-1f31-43e1-b258-6820f9ec8a1b" />
+![image](https://github.com/user-attachments/assets/94665dd4-4186-4faa-957c-be9d837f5927)
 
 
 ## Understanding Dig Output
@@ -461,7 +460,8 @@ While this interpretation is widely accepted, the official definition remains th
 - `TTL` (Time To Live) defines how long a DNS record can be cached, it is measured in seconds
 - Once the TTL expires, the record must be queried again instead of using the cached version
 - for example: a `TTL` of 157 seconds means the record will expire in 2 minutes and 37 seconds
-<img width="450" height="147" alt="image" src="https://github.com/user-attachments/assets/313c9211-4c7d-4505-9547-eb6d9d00e752" />
+
+![image](https://github.com/user-attachments/assets/9de666cf-224a-4ad4-ad7f-4ac7542a8991)
 
 
 ---  
