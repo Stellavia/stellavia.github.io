@@ -8,6 +8,7 @@ I hope it can be a useful resource for you :)
 - [AI](AI/)
 - [Malware](Malware/)
 - [Cloud](Cloud/)
+- [Wireshark](Wireshark/) - also contains TShark
 
 # Modules:
 - [Introduction to Web Hacking](Introduction-to-Web-Hacking/)
