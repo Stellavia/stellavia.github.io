@@ -1,3 +1,3 @@
-- [Bash Scripting](TryHackMe/Bash-Scripting)
-- [Hardening Basics Part 2](Hardening-Basics-Parts-2)
+- [Bash Scripting](Bash-Scripting.md)
+- [Hardening Basics Part 2](Hardening-Basics-Parts-2.md)
 
