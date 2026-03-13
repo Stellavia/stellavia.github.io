@@ -196,7 +196,9 @@ Example
 - as a user run `ssh-keygen`
 - Defaults to creating keys in `~/.ssh/`
 - Generates both public (`id_rsa.pub`) and private (`id_rsa`) keys
-<img width="514" height="374" alt="image" src="https://github.com/user-attachments/assets/1e749992-67f4-4c3e-bc9c-a234861c7c9b" />
+
+![image](https://github.com/user-attachments/assets/7454448a-d79e-42f2-9d5d-0f6a7e7ad985)
+
 
 >[!IMPORTANT]
 >Public key = shared with the server
@@ -269,7 +271,7 @@ Example
 - A log file is created any time someone logs in with a Protocol that uses SSH.
 - By default, Ubuntu stores this log file in /var/log/auth.log
 
-![image]https://github.com/user-attachments/assets/4b6d1491-a42f-4c95-ab41-8702cfbc604e)
+![image](https://github.com/user-attachments/assets/4b6d1491-a42f-4c95-ab41-8702cfbc604e)
 
 
 - There's a few different levels of logging that you can find in the man pages of `sshd_config`: QUIET, FATAL, ERROR, INFO, VERBOSE, DEBUG1, DEBUG2, DEBUG3
