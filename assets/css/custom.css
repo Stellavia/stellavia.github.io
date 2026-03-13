@@ -1,0 +1,13 @@
+.note {
+  border-left: 4px solid orange;
+  padding: 0.5em 1em;
+  background-color: #fff8e1;
+  margin: 1em 0;
+}
+
+.tip {
+  border-left: 4px solid lightblue;
+  padding: 0.5em 1em;
+  background-color: #e1f5fe;
+  margin: 1em 0;
+}
