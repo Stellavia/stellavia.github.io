@@ -29,6 +29,7 @@ description: Power-up your Linux skills and get hands-on with some common utilit
 
 &nbsp;
 
+---
 # Terminal Text Editors
 
 &nbsp;
