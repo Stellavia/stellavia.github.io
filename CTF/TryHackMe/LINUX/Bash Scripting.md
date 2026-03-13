@@ -1,10 +1,3 @@
-<!--
----
-title: Bash Scripting
-permalink: /BashScripting/
----
--->
-
 🔗 [Link to the Room](https://tryhackme.com/room/bashscripting)
 
 🔗 [Link for further learning](https://devhints.io/bash)
