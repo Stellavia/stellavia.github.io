@@ -33,7 +33,8 @@ description: Learn about, then enumerate and exploit a variety of network servic
 - Connections typically use TCP/IP (NetBIOS over TCP/IP), NetBEUI, or IPX/SPX. 
 - Once connected, clients can access shared folders, read and write files, and use printers or other shared services.
 
-<img width="534" height="239" alt="image" src="https://github.com/user-attachments/assets/45c551e7-13ed-40a5-a396-68a933d7f34f" />
+![image](https://github.com/user-attachments/assets/d4ffcd30-5f54-4542-964e-5e10ac0150c3)
+
 
 - Supported by Windows since Windows 95.
 - Samba provides SMB support for Linux/Unix systems.
@@ -239,7 +240,7 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 - **CVEs** are public records of known **security flaws with ID** numbers.
 - Enumeration may reveal clues like service labels or usernames.
 
-  <img width="632" height="165" alt="image" src="https://github.com/user-attachments/assets/7258d7b8-6fa2-44b0-959d-ebeacbd0886c" />
+![image](https://github.com/user-attachments/assets/b5be0f1f-2eac-4598-bcd8-55159db9f152)
 
 - **Telnet access can be used as a step toward getting a reverse shell.**
 
@@ -252,7 +253,6 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 >
 
 &nbsp;
-
 
 ---  
 ><details><summary>❓Great! It's and open telnet connection! What welcome message do we receive?</summary>SKIDY'S BACKDOOR.</details>
@@ -292,6 +292,7 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 > Default FTP port is usually 21 for commands. <br>
 > Because standard FTP is not encrypted, many systems now prefer SFTP or FTPS for secure file transfers. <br>
 > The official FTP specification is documented in RFC 959 by the IETF. <br>
+
 ---  
 ><details><summary>❓What communications model does FTP use?</summary>client-server</details>
 ---  
@@ -299,6 +300,7 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 ---  
 ><details><summary>❓How many modes of FTP connection are there?</summary>2</details>
 ---
+
 ## Enumerating FTP
 
 - **FTP enumeration** is the **process of checking an FTP service for accessible files**, weak settings, and login options. 
@@ -321,7 +323,6 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 - This can be abused to discover valid usernames on legacy systems.
 - Documented example: **Exploit‑DB entry 20745**.
 
-  
 ---  
 ><details><summary>❓How many ports are open on the target machine?</summary>3</details>
 ---  
@@ -353,7 +354,6 @@ The syntax of Enum4Linux: `enum4linux [options] ip`
 - **Weak or default passwords are a common entry point**.
 - Brute force attacks are often used when a username is known.
 - **Hydra** is a popular **tool for password attacks on FTP** and other services.
-
 
 - Important Hydra options to remember:
   
