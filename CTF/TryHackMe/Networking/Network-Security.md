@@ -50,10 +50,8 @@ description: Learn about network security, understand attack methodology, and pr
 &nbsp;
 
 ---
-
 ><details><summary>❓What type of firewall is Windows Defender Firewall?</summary>Host Firewall</details>
 >Solution: It runs on your computer and protects only that device, not the whole network.
-
 --- 
 
 &nbsp;
@@ -71,21 +69,16 @@ description: Learn about network security, understand attack methodology, and pr
 **5. Installation** – Malware installs on the system. <br>
 **6. Command & Control (C2)** – Attacker gains remote control of the system. <br>
 **7. Actions on Objectives** – Attacker achieves goals (e.g., data exfiltration). <br>
-   
 
 - The process is similar to a thief planning a break-in: observe first, plan entry, then steal valuables.
 
-<img width="1140" height="508" alt="821ff7df89367ba6d12cbdacd669027a" src="https://github.com/user-attachments/assets/a96bc3c8-4412-410c-ae43-c3f1a773fd63" />
-
-
-&nbsp;
+![image](https://github.com/user-attachments/assets/9ca58ffa-135b-48de-9f44-f7c1a265b642)
 
 ---
-
 ><details><summary>❓During which step of the Cyber Kill Chain does the attacker gather information about the target</summary>Recon</details>
 >✅Solution: The attacker gathers info about the target before launching the attack, which is first step
-
 ---
+
 # Practical Example of Network Security
 
 1. **Start AttackBox and target machine and open the terminal**. 
@@ -106,18 +99,12 @@ description: Learn about network security, understand attack methodology, and pr
 &nbsp;
 
 ---
-
 ><details><summary>❓What is the password in the secret.txt file?</summary>ABC789xyz123</details>
 >✅Solution: First 5 steps in the list above.
-
 ---
-
 ><details><summary>❓What is the content of the flag.txt in the /root directory?</summary>THM{***_******_*****}</details>
 >✅Solution: Use commands (without brackets): [cd /root], [ls], [cat flag.txt]
-
 ---
-
 ><details><summary>❓What is the content of the flag.txt in the /home/librarian directory?</summary>THM{*********_*******_***********}</details>
 >✅Solution: Use commands (without brackets): [cd /home/librarian], [ls], [cat flag.txt]
-
 ---
