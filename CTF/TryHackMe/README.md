@@ -1,7 +1,7 @@
 After completing over 444 rooms on TryHackMe, I decided to consolidate my learning and create a repository with complete solutions for each room I solved. <br>
 I hope it can be a useful resource for you :)
 
-Rooms:
+# Rooms:
 
 - [LINUX](LINUX/) 
 - [WINDOWS](WINDOWS/)
@@ -9,5 +9,5 @@ Rooms:
 - [Malware](Malware/)
 - [Cloud](Cloud/)
 
-Modules:
+# Modules:
 - [Introduction to Web Hacking](Introduction-to-Web-Hacking/)
