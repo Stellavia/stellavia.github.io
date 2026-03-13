@@ -14,4 +14,4 @@ Feel free to dive into the sections, experiment with the examples, and use this 
 
 Happy exploring!
 
-<img width="1024" height="1536" alt="Image" src="https://github.com/user-attachments/assets/dcd6ac7c-fe6d-4532-ad6f-6bb2f843b683" />
+![image](https://github.com/user-attachments/assets/dcd6ac7c-fe6d-4532-ad6f-6bb2f843b683)
