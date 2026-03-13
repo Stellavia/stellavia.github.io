@@ -1,7 +1,12 @@
+---
+layout: default
+title: Hardening Basics Part 2
+description: Continue learning about hardening
+---
 
 🔗 [Link to the Room](https://tryhackme.com/room/hardeningbasicspart2)
 
-## 🏷️ **Topic:** Continue learning about hardening
+## 🏷️ Table of Contents
 
 1. [Chapter 3 Quiz](#chapter-3-quiz)<br>
 2. [GNU Privacy Guard](#gnu-privacy-guard)<br>
