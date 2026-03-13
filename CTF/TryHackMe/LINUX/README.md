@@ -1,1 +1,2 @@
-- [Bash Scripting](Bash-Scripting.md)
+- [Bash Scripting](#BashScripting.md)
+- [Hardening Basics Part 2.md](#HardeningBasicsParts2.md
