@@ -88,7 +88,8 @@ To echo **single word** use `echo word`
 To echo **string** (sentence) enclose it in double quotes: `echo "More words"
 Example:
 
-<img width="332" height="101" alt="image" src="https://github.com/user-attachments/assets/83cf6891-6944-48fe-857f-34af98eeed90" />
+![image](https://github.com/user-attachments/assets/88608c78-3a43-4b32-8d8e-20c3afbdd5bf)
+
 
 &nbsp;
 
@@ -116,7 +117,8 @@ Example:
 
 ## Listing Files in Our Current Directory with ls
 
-<img width="412" height="61" alt="image" src="https://github.com/user-attachments/assets/21131768-02a4-4b09-b1c7-3ea40879ffa0" />
+![image](https://github.com/user-attachments/assets/3b457ede-2786-4d33-8f0c-56cc9429be70)
+
 
 Tip: You can list the contents of a directory without having to navigate to it by using ls and the name of the directory. For example `ls Pictures`
 
@@ -127,7 +129,7 @@ Tip: You can list the contents of a directory without having to navigate to it b
 cd is short for change directory, hence to open directory (folder) use `cd Your_Directory`
 Then to check its content use `ls` again:
 
-<img width="547" height="64" alt="image" src="https://github.com/user-attachments/assets/b82420cb-1cca-4f57-9560-311363690c66" />
+![image](https://github.com/user-attachments/assets/a80b128e-6805-4f38-ac4e-50c091f982aa)
 
 In this case, there are 4 pictures of dogs.
 
@@ -137,7 +139,8 @@ In this case, there are 4 pictures of dogs.
 
 `Cat` is short for concatenating and it's a fantastic way for us to output the contents of files (not just text files).
 
-<img width="392" height="103" alt="image" src="https://github.com/user-attachments/assets/dd6343e8-05f2-4504-8976-dab501f9d9a8" />
+![image](https://github.com/user-attachments/assets/aa9fbafe-ff7d-4edb-9939-15c1ee85ecef)
+
 
 Tip: You can use `cat` to output the contents of a file within directories without having to navigate to it by using cat and the name of the directory. For example: `cat /home/ubuntu/Documents/todo.txt`
 
@@ -147,7 +150,8 @@ Tip: You can use `cat` to output the contents of a file within directories witho
 
 `pwd` stands for **print working directory**.
 
-<img width="291" height="81" alt="image" src="https://github.com/user-attachments/assets/71c83c96-6d7f-49d8-a7bb-469104dd8405" />
+![image](https://github.com/user-attachments/assets/667ae920-d099-4054-aaa1-6820dbd6d0ad)
+
 
 &nbsp;
 
@@ -178,11 +182,11 @@ You can use `find` let you quickly search the whole system instead of manually n
 
 Using `find` to find a file with the name of passwords.txt:
 
-<img width="381" height="82" alt="image" src="https://github.com/user-attachments/assets/dbb36a6a-3711-4b8a-932b-9ad96cce35bb" />
+![image](https://github.com/user-attachments/assets/5f632c07-6a69-4996-b0f6-8258f7ec9eae)
 
 Using `find` to find any file with the extension of .txt:
 
-<img width="326" height="100" alt="image" src="https://github.com/user-attachments/assets/dc76a130-f68d-4dd1-9e0c-fe0f1fc60fce" />
+![image](https://github.com/user-attachments/assets/ed506125-6b00-4fac-b6ad-f128b2e6c576)
 
 &nbsp;
 
@@ -192,11 +196,13 @@ Using `find` to find any file with the extension of .txt:
 
 Using `wc` to count the number of entries in access.log:
 
-<img width="320" height="83" alt="image" src="https://github.com/user-attachments/assets/48ca15e3-232b-4500-85ba-3cb33ba9eb43" />
+![image](https://github.com/user-attachments/assets/ef9473ba-0634-441d-8e1c-5342ff5304dd)
+
 
 Using `grep` to find any entries with the IP address of "81.143.211.90" in access.log:
 
-<img width="1184" height="89" alt="image" src="https://github.com/user-attachments/assets/e6db553a-041c-40fb-b749-d70c98e95d3e" />
+![image](https://github.com/user-attachments/assets/410c9b12-e220-4eb8-bd5b-2b4a3bd11b72)
+
 
 `Grep` has searched through this file and has shown you any entries of what you've provided and that is contained within this log file for the IP.
 
@@ -211,7 +217,8 @@ Using `grep -R` lets you search for specific text **across all files and subfold
 Example:
 To search for a variable across all files in the current directory and its subfolders: `grep -R "PRETTY_NAME" /etc/`
 Example Output:
-<img width="321" height="83" alt="image" src="https://github.com/user-attachments/assets/6f16b2f5-a145-45f5-a63b-5302c9b9392c" />
+![image](https://github.com/user-attachments/assets/565442eb-4168-4d7e-b06a-21ffb20eabab)
+
 The file path is shown before the matching line, making it easy to identify where the result was found.
 
 &nbsp;
