@@ -200,7 +200,7 @@
 - You can assign a new value to a specific index by `transport[1]='trainride'`
 - Now the array becomes `car trainride bike bus`
 
->[!NOTE]
+>[.note]
 > Arrays are great when you need to store multiple values of the same type, loop through data, organize inputs cleanly, build more advanced scripts (automation, security checks, etc.)
 
 &nbsp;
