@@ -61,7 +61,7 @@ description: Learn how to perform live forensics on a Linux host.
 
 Linux powers many servers, cloud services, and supercomputers due to its reliability and performance, which also makes it a major target for cyberattacks.
 
-<img width="428" height="164" alt="image" src="https://github.com/user-attachments/assets/ee070ed3-51cb-4fa6-b235-ef825b619781" />
+![image](https://github.com/user-attachments/assets/ee070ed3-51cb-4fa6-b235-ef825b619781)
 
 As a SOC analyst, your task is to perform live forensics on a compromised Linux server to identify attack footprints and assess the extent of the damage.
 
@@ -90,10 +90,6 @@ Key data investigators collect from a **running Linux system**:
 | Network Interfaces | Shows IP, MAC, and routing details that may indicate tampering. |
 | Temporary Files | `/tmp` and `/var/tmp` may contain scripts or attack artifacts. |
 
-
-
-
-
 <!-- NO QUESTIONS HERE -->
 
 &nbsp;
@@ -115,7 +111,7 @@ To display the help options run `.help` command.
 
 Check [osquery website](https://osquery.io/schema/5.12.1/) to view table schemas:
 
-<img width="1375" height="679" alt="5e8dd9a4a45e18443162feab-1719236531944" src="https://github.com/user-attachments/assets/9a27f633-e600-4830-afd4-36cb467a954c" />
+![image](https://github.com/user-attachments/assets/9a27f633-e600-4830-afd4-36cb467a954c)
 
 &nbsp;
 
@@ -123,7 +119,7 @@ Check [osquery website](https://osquery.io/schema/5.12.1/) to view table schemas
 
 To retrieve info about the user accounts created on the host use Search Query: `Select username, uid, description from users;`
 
-<img width="656" height="324" alt="image" src="https://github.com/user-attachments/assets/345e03f1-7326-4516-9efe-3dfbfb63c0bb" />
+![image](https://github.com/user-attachments/assets/345e03f1-7326-4516-9efe-3dfbfb63c0bb)
 
 - **uid**: User ID.
 - **username**: Username.
@@ -139,7 +135,7 @@ To retrieve info about the user accounts created on the host use Search Query: `
 
 To get the info about the running processes use Query: `Select pid, name, parent,path from processes;`
 
-<img width="584" height="368" alt="image" src="https://github.com/user-attachments/assets/56b2f676-2873-4842-8247-7f27c53d3d7d" />
+![image](https://github.com/user-attachments/assets/56b2f676-2873-4842-8247-7f27c53d3d7d)
 
 &nbsp;
 
@@ -168,7 +164,7 @@ Make sure to switch to **root** by using `sudo su` command.
 To extract basic information about the system use `uname -a` command.
  This command output provides comprehensive details about the system, including its kernel version, architecture, hostname, and the date and time when the kernel was compiled.
 
-<img width="986" height="92" alt="image" src="https://github.com/user-attachments/assets/5ff91e0e-1a53-4cfd-8f33-c83f84c5d5d3" />
+![image](https://github.com/user-attachments/assets/5ff91e0e-1a53-4cfd-8f33-c83f84c5d5d3)
 
 This command output provides comprehensive details about the system, including its kernel version, architecture, hostname, and the date and time when the kernel was compiled. Let's break down the information we retrieved from this command:
 - **Linux**: The operating system name.
@@ -185,7 +181,7 @@ This command output provides comprehensive details about the system, including i
 
 To see details about the hostname and related settings run `hostnamectl` command.
 
-<img width="732" height="272" alt="image" src="https://github.com/user-attachments/assets/a43a8680-eb86-4ff9-914d-475a8ea7cff4" />
+![image](https://github.com/user-attachments/assets/a43a8680-eb86-4ff9-914d-475a8ea7cff4)
 
 - **Static hostname**: This is the permanent hostname assigned to the system. It's set in /etc/hostname and remains consistent across reboots.
 - **Icon name**: This is a standardized name that represents the type of computer, often used in desktop environments to show appropriate icons.
@@ -201,7 +197,7 @@ To see details about the hostname and related settings run `hostnamectl` command
 
 To see a quick snapshot of your system's current status, including the time, how long it's been running, how many users are logged in, and how busy the system is run `uptime` command.
 
-<img width="638" height="105" alt="image" src="https://github.com/user-attachments/assets/56efdd87-1ce5-49a4-bf47-f4e5a7599f92" />
+![image](https://github.com/user-attachments/assets/56efdd87-1ce5-49a4-bf47-f4e5a7599f92)
 
 &nbsp;
 
@@ -209,7 +205,7 @@ To see a quick snapshot of your system's current status, including the time, how
 
 To display detailed info about the CPU architecture run `lscpu` command.
 
-<img width="646" height="758" alt="image" src="https://github.com/user-attachments/assets/b333501f-9877-426f-a0a0-fc9d05f66d60" />
+![image](https://github.com/user-attachments/assets/b333501f-9877-426f-a0a0-fc9d05f66d60)
 
 - **Architecture**: It shows the CPU architecture (e.g., x86_64 for 64-bit processors).
 - **CPU op-mode(s)**: This field shows the CPU modes supported (e.g., 32-bit and 64-bit).
@@ -223,7 +219,7 @@ To display detailed info about the CPU architecture run `lscpu` command.
 
 To see the amount of disk space used and available on the system run `df -h` command.
 
-<img width="634" height="494" alt="image" src="https://github.com/user-attachments/assets/eb0da5e1-f2ea-414e-9ee0-0ef1d38a933c" />
+![image](https://github.com/user-attachments/assets/eb0da5e1-f2ea-414e-9ee0-0ef1d38a933c)
 
 The df command is crucial for monitoring disk usage. It helps you see how much space is used and how much is available, which is essential for managing storage resources.
 
@@ -233,7 +229,7 @@ The df command is crucial for monitoring disk usage. It helps you see how much s
 
 To see information about block devices, such as disks and partitions, including their sizes, mount points, and other relevant details use `lsblk` command.
 
-<img width="609" height="466" alt="image" src="https://github.com/user-attachments/assets/ee51cd76-d689-46dd-b098-8b3f5897a16c" />
+![image](https://github.com/user-attachments/assets/ee51cd76-d689-46dd-b098-8b3f5897a16c)
 
 &nbsp;
 
@@ -241,7 +237,7 @@ To see information about block devices, such as disks and partitions, including 
 
 To display memory usage info in human-readable format use `free -h` command.
 
-<img width="803" height="114" alt="image" src="https://github.com/user-attachments/assets/a30bf380-5fc4-4ab3-b584-38c034fde12d" />
+![image](https://github.com/user-attachments/assets/a30bf380-5fc4-4ab3-b584-38c034fde12d)
 
 &nbsp;
 
@@ -253,13 +249,13 @@ Debian-based systems use package managers like dpkg and apt to install, update, 
 
 To list down the installed packages use `dpkg -l` command.
 
-<img width="1462" height="630" alt="5e8dd9a4a45e18443162feab-1719953593024" src="https://github.com/user-attachments/assets/4286c7be-24f2-430f-8528-77072690ad03" />
+![image](https://github.com/user-attachments/assets/4286c7be-24f2-430f-8528-77072690ad03)
 
 ### 2 - apt
 
 To list down all the packages installed through apt use `apt` command.
 
-<img width="930" height="512" alt="image" src="https://github.com/user-attachments/assets/b9ad7a86-57d0-4021-8161-bdc3e1ef6519" />
+![image](https://github.com/user-attachments/assets/b9ad7a86-57d0-4021-8161-bdc3e1ef6519)
 
 &nbsp;
 
@@ -267,15 +263,15 @@ To list down all the packages installed through apt use `apt` command.
 
 Commands like `ifconfig` or `ip a` show network interface details such as IP address, MAC address, network mask, and connection status.
 
-<img width="810" height="330" alt="image" src="https://github.com/user-attachments/assets/6d27bfc0-66c7-4f6e-99ee-31d4b11d27bc" />
+![image](https://github.com/user-attachments/assets/6d27bfc0-66c7-4f6e-99ee-31d4b11d27bc)
 
 To display routing table use command `ip r` or `route`
 
-<img width="706" height="181" alt="image" src="https://github.com/user-attachments/assets/c7b6bc4b-16fc-4707-ab45-945633d061e7" />
+![image](https://github.com/user-attachments/assets/c7b6bc4b-16fc-4707-ab45-945633d061e7)
 
 To show socket statistics and active connections use command `ss` or `netstat`
 
-<img width="1749" height="310" alt="5e8dd9a4a45e18443162feab-1716999176190" src="https://github.com/user-attachments/assets/3de2d27e-1a74-469e-af1d-be9f2ec2eaa0" />
+![image](https://github.com/user-attachments/assets/3de2d27e-1a74-469e-af1d-be9f2ec2eaa0)
 
 &nbsp;
 
@@ -312,7 +308,7 @@ From a forensics point of view, finding out what process is running on the suspe
 
 To list down all the running processes use Search Query: `SELECT pid, name, path, state FROM processes;`
 
-<img width="793" height="593" alt="image" src="https://github.com/user-attachments/assets/430d7b6b-0d2a-44c3-b1d4-d0ee2d32839c" />
+![image](https://github.com/user-attachments/assets/430d7b6b-0d2a-44c3-b1d4-d0ee2d32839c)
 
 The command retrieves a list of all currently running processes on the system and provides the following details for each process:
 - **pid**: The unique process ID
@@ -326,7 +322,7 @@ The command retrieves a list of all currently running processes on the system an
 
 To narrow down the result to only show the processes running from the `/tmp/` or `/var/tmp/` directory use Query: `SELECT pid, name, path FROM processes WHERE path LIKE '/tmp/%' OR path LIKE '/var/tmp/%';`
 
-<img width="866" height="204" alt="image" src="https://github.com/user-attachments/assets/cec919a8-29e4-4862-9ffa-63102763b7fd" />
+![image](https://github.com/user-attachments/assets/cec919a8-29e4-4862-9ffa-63102763b7fd)
 
 Two processes were initiated from the tmp directories, indicating the host is infected.
 
@@ -336,7 +332,7 @@ Two processes were initiated from the tmp directories, indicating the host is in
 
 To list the processes executing on the host but not on the disk run Search Query: `SELECT pid, name, path, cmdline, start_time FROM processes WHERE on_disk = 0;`D
 
-<img width="803" height="183" alt="image" src="https://github.com/user-attachments/assets/249a10ce-6116-4ab8-b85e-205ad228387f" />
+![image](https://github.com/user-attachments/assets/249a10ce-6116-4ab8-b85e-205ad228387f)
 
 >[!NOTE]
 >Not every process without a presence on disk can be indicated as suspicious.
