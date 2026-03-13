@@ -12,5 +12,5 @@ plugins:
 
 nav:
 - Home: "/"
-- CTF: 
-  - TryHackMe: "/CTF/TryHackMe/"
+- CTF: "/CTF/" 
+- TryHackMe: "/CTF/TryHackMe/"
