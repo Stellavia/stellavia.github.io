@@ -1,3 +1,3 @@
-- [Bash Scripting](/BashScripting.md)
-- [Hardening Basics Part 2.md](/HardeningBasicsParts2.md)
+- [Bash Scripting](TryHackMe/BashScripting.md)
+- [Hardening Basics Part 2.md](HardeningBasicsParts2.md)
 
