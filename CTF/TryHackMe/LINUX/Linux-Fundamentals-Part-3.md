@@ -28,6 +28,7 @@ description: Power-up your Linux skills and get hands-on with some common utilit
 6. [Maintaining Your System: Logs](#maintaining-your-system-logs)<br>
 
 ---
+
 # Terminal Text Editors
 
 &nbsp;
@@ -41,7 +42,7 @@ Instead of using `echo` and `>` to write files, Linux offers **terminal text edi
 - Beginner-Friendly
 - to open or create a file use `nano file_name`
 
-<img width="552" height="104" alt="image" src="https://github.com/user-attachments/assets/7c2aa149-407e-430c-be56-2943aee9130b" />
+![image](https://github.com/user-attachments/assets/efdef31d-c0aa-47a9-a5f8-80e31f02f526)
 
 Navigate with arrow keys and add new lines with Enter.
 
@@ -114,10 +115,9 @@ Linux has some essential tools to **download, transfer, and serve files**.
 
 Ubuntu machines come pre-packaged with python3. Python helpfully provides a lightweight and easy-to-use module called "HTTPServer". This module turns your computer into a quick and easy web server that you can use to serve your own files, where they can then be downloaded by another computing using commands such as `curl` and `wget`. 
 
-
 Python3's "HTTPServer" will serve the files in the directory where you run the command, but this can be changed by providing options that can be found within the manual pages. Simply, all we need to do is run `python3 -m  http.server` in the terminal to start the module! In the snippet below, we are serving from a directory called "webserver", which has a single named "file".
 
-<img width="540" height="97" alt="image" src="https://github.com/user-attachments/assets/68b3d905-8c87-45c1-a78c-42946a96af3b" />
+![image](https://github.com/user-attachments/assets/12ddda12-163a-4101-9737-e7444585331d)
 
 Use `wget` to download the fine using the MACHINE_IP and the name of the file.
 Remember, because the python3 server is running port 8000, you will need to specify this within your wget command: `wget http://MACHINE_IP:8000/myfile`
@@ -125,10 +125,9 @@ Remember, because the python3 server is running port 8000, you will need to spec
 Now open a new terminal to use `wget`and leave that one you have started the Python3 web server it. Once you start the Python3 web server, it will run in that terminal until you cancel it.
 
 Example:
-<img width="1121" height="309" alt="image" src="https://github.com/user-attachments/assets/afbc562f-4472-4516-9ef7-bf74b3bf106e" />
+![image](https://github.com/user-attachments/assets/a1428d91-a0d7-4878-82cf-9bfebe931eae)
 
-
-<img width="837" height="817" alt="14de6e0470d50317f3b24f4f9aa9297a" src="https://github.com/user-attachments/assets/4d77b474-e373-4875-9171-f39e8e380718" />
+![image](https://github.com/user-attachments/assets/49f9a0e5-c24b-42cd-9949-0f152631bfa2)
 
 &nbsp;
 
@@ -156,18 +155,18 @@ A **process** is simply a program that is currently running on your system.
 Command `ps` shows running processes in your current session.
 Information shown may include PID, CPU usage, status, command being run.
 
-<img width="308" height="193" alt="ps1" src="https://github.com/user-attachments/assets/02761d7c-9143-416c-9c90-f8b136248013" />
+![image](https://github.com/user-attachments/assets/e30b8584-7f24-4e46-9aa3-1eebe454ddc3)
 
 Command `ps aux` shows all processes on the system, including processes from other users or system processes.
 
-<img width="679" height="158" alt="ps2" src="https://github.com/user-attachments/assets/1615df3c-9588-40e4-89b0-8af362899729" />
+![image](https://github.com/user-attachments/assets/2f21e849-50ca-45cf-acdc-a61d45948f93)
 
 _Note we can see a total of 5 processes -- note how we now have "root"  and "cmnatic"_
 
 Command `top` shows real-time process information.
 It shopws live CPU usage, memory usage or updating process list.
 
-<img width="719" height="239" alt="top1" src="https://github.com/user-attachments/assets/0889fdea-6b2f-40bf-8aa4-55ab06788851" />
+![image](https://github.com/user-attachments/assets/078ab415-a7e1-4b04-a3ce-8b93f6a6fba2)
 
 &nbsp;
 
@@ -195,7 +194,7 @@ The **First Process** when Linux boots has an **ID** of **0**. This process is t
 
 Programs you start become child processes of systemd. This means that it is controlled by systemd, but will run as its own process (although sharing the resources from systemd) to make it easier for us to identify and the likes. 
 
-<img width="919" height="62" alt="process1" src="https://github.com/user-attachments/assets/ea6bc9d8-a8d6-49ea-a7f5-9bd5ae00bd81" />
+![image](https://github.com/user-attachments/assets/336ffc04-a71f-40ee-b3f8-85a683f5950d)
 
 &nbsp;
 
@@ -229,11 +228,11 @@ Processes can run in two modes: foreground and background.
 Add `&` to run a command in background: `command &`
 e.g.: `echo "Hi THM" &` insteadd of output them, you'll see the process ID.
 
-<img width="382" height="137" alt="bg1" src="https://github.com/user-attachments/assets/d5e10d59-667b-40d3-8004-70fa2b415f70" />
+![image](https://github.com/user-attachments/assets/b3bfaffd-d420-45e7-bc52-1ed1ecde57b7)
 
 This script will keep on repeating "This will keep on looping until I stop!" until I stop or suspend the process. By using Ctrl + Z (as indicated by T^Z). Now our terminal is no longer filled up with messages -- until we foreground it.
 
-<img width="548" height="353" alt="bg2" src="https://github.com/user-attachments/assets/8ef9103b-7bb0-4bde-bba1-e1ccb7540303" />
+![image](https://github.com/user-attachments/assets/e284145b-8fcf-47ec-a283-78396a7c2751)
 
 &nbsp;
 
@@ -241,11 +240,7 @@ This script will keep on repeating "This will keep on looping until I stop!" unt
 
 Now that we have a process running in the background, for example, our script "background.sh" which can be confirmed by using the ps aux command, we can back-pedal and bring this process back to the foreground to interact with.
 
-<img width="1160" height="114" alt="bg3" src="https://github.com/user-attachments/assets/fdb7f207-f370-44c4-b005-869acec760b6" />
-
-With our process backgrounded using either Ctrl + Z or the & operator, we can use fg to bring this back to focus:
-
-<img width="333" height="106" alt="bg4" src="https://github.com/user-attachments/assets/42636efa-8f07-4111-9c6f-b76fd46afe5f" />
+With our process backgrounded using either Ctrl + Z or the & operator, we can use `fg` to bring this back to focus.
 
 &nbsp;
 
@@ -287,7 +282,7 @@ Example tasks you might automate: Daily backups, system updates, running scripts
 > **Crontab** is the tool used to configure those tasks
 >
 
-<img width="718" height="494" alt="cron1" src="https://github.com/user-attachments/assets/5ecbbeb3-5b8d-4b72-a8ab-d04c9299f006" />
+
 
 A crontab is simply a special file with formatting that is recognised by the cron process to execute each line step-by-step. 
 Crontabs require 6 specific values:
