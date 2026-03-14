@@ -6,7 +6,7 @@ description: This room introduces users to operating system security and demonst
 
 🔗 [Link to the Room](https://tryhackme.com/room/operatingsystemsecurity)
 
-## 🏷️ Tabe of Contents
+## 🏷️ Table of Contents
 
 1. [Intro to Operating System Security](#intro-to-operating-system-security)<br>
 2. [Common Examples of OS Security](#common-examples-of-os-security)<br>
