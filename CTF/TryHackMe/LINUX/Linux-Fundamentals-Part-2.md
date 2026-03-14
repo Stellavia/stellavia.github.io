@@ -4,7 +4,6 @@ title: Linux Fundamentas Part 2
 description: Continue your learning Linux journey with part two. You will be learning how to log in to a Linux machine using SSH, how to advance your commands, file system interaction
 ---
 
-
 🔗 [Link to the Room](https://tryhackme.com/room/linuxfundamentalspart2)
 
 ## 🏷️ Table of Contents
@@ -31,6 +30,7 @@ description: Continue your learning Linux journey with part two. You will be lea
   6.3 [root](#root)<br>
   6.4 [tmp](#tmp)<br>
 
+---
 
 # Introduction
 
@@ -47,7 +47,7 @@ All communication is encrypted, keeping your data safe over the internet.
 
 SSH is like a secure remote control for a Linux machine.
 
-![image](https://github.com/user-attachments/assets/dd366f7e-36fa-4dce-93cb-8544c7d32987)
+![image](https://github.com/user-attachments/assets/7ea4dbf5-f8b7-4cef-9dd6-7090d9d540c3)
 
 It's time for you to deploy your machines on thm.
 
@@ -65,8 +65,8 @@ Example: `ls` Command
 - `ls` lists files in the current folder, hides hidden files by default.
 - `ls -a` shows all files, including hidden ones that start with `.` like `.hiddenfolder`.
 
-<img width="440" height="117" alt="image" src="https://github.com/user-attachments/assets/8da32f6b-04e7-4a57-abfa-105d1dfbd0eb" />
-<img width="416" height="116" alt="image" src="https://github.com/user-attachments/assets/5eeb5595-4492-44f9-932a-82083cadbdaa" />
+![image](https://github.com/user-attachments/assets/6769d1e7-716b-4023-948e-2e7c5c8c0443)
+![image](https://github.com/user-attachments/assets/8cdd712b-87b4-4aad-bff7-bc7787a038f7)
 
 Most commands have a `--help` option, which lists all available flags and what they do: `ls --help`
 
@@ -77,7 +77,7 @@ Most commands have a `--help` option, which lists all available flags and what t
 Every Linux command has a manual page (man page) with full documentation.
 Syntax example: `man ls`
 
-<img width="577" height="484" alt="image" src="https://github.com/user-attachments/assets/9dbbba8b-abfa-4073-b1cf-1e002fdb36bd" />
+![image](https://github.com/user-attachments/assets/80efe324-11c1-434f-abd1-1e4a6ba947ac)
 
 The man page tells you what the command does, which flags are available and examples of usage.
 
@@ -117,12 +117,12 @@ To create a file use `touch file_name`
 `touch` will create a blank file.
 To edit file (add content) use commands like `vi`, `nano` or so.
 
-<img width="420" height="110" alt="image" src="https://github.com/user-attachments/assets/7dff06bf-ad14-4810-aaa1-50e2b357505d" />
+![image](https://github.com/user-attachments/assets/5c786a57-82c2-47e4-94a2-c7f7557c7a2b)
 
 To create a directory (new folder) use `mkdir folder_name`
 `mkdir`literally means **make directory**
 
-<img width="403" height="120" alt="image" src="https://github.com/user-attachments/assets/2f38be85-9aa1-41ff-92ac-0211e2eebf37" />
+![image](https://github.com/user-attachments/assets/5f9ca54b-570f-43e1-92c6-0d80ef8ea578)
 
 &nbsp;
 
@@ -131,7 +131,7 @@ To create a directory (new folder) use `mkdir folder_name`
 To remove file use `rm file_name`
 To remove a folder recursively use option `-R`. Syntax example: `rm -R directory_name`
 
-<img width="436" height="255" alt="image" src="https://github.com/user-attachments/assets/7c57a43b-24f8-4457-a328-5d2d1c7ab32d" />
+![image](https://github.com/user-attachments/assets/17024b87-b146-49fd-a7b9-cbe047a9861a)
 
 &nbsp;
 
@@ -139,7 +139,8 @@ To remove a folder recursively use option `-R`. Syntax example: `rm -R directory
 
 To copy a file use `cp` followed by the name of the file you want to be copied, then followed by the name of the new copy.
 
-<img width="363" height="116" alt="image" src="https://github.com/user-attachments/assets/6e23d655-e1aa-4384-8a93-4e8879083b65" />
+![image](https://github.com/user-attachments/assets/dfa61f18-0324-4077-a3d1-42dd0faab442)
+
 
 To move a file use `mv`.
 Note: `mv` will merge or modify the second file that you provide as an argument. You can use `mv` to rename a file (or folder).
@@ -147,7 +148,7 @@ You can move files into folders by providing the folder name as the second argum
 
 Example of renaming the file `note2` to be named `note3`:
 
-<img width="384" height="118" alt="image" src="https://github.com/user-attachments/assets/55991f0a-2343-4192-93a6-6b866ab25740" />
+![image](https://github.com/user-attachments/assets/60ad568a-ab42-4e6e-a980-bfe582bef83e)
 
 &nbsp;
 
@@ -156,7 +157,7 @@ Example of renaming the file `note2` to be named `note3`:
 Linux files don’t always rely on extensions.
 Use the `file` command to check what a file actually contains:
 
-<img width="442" height="101" alt="image" src="https://github.com/user-attachments/assets/f6e23abd-d3bf-4a76-8ea5-2a1441b4617a" />
+![image](https://github.com/user-attachments/assets/7c13383b-4b5f-45e9-86ee-3145215a6ac3)
 
 &nbsp;
 
@@ -181,7 +182,7 @@ In Linux, **files and folders have permissions** that control who can read, writ
 
 Use `ls -l` or `ls -lh` to see files and their permissions:
 
-<img width="490" height="112" alt="image" src="https://github.com/user-attachments/assets/4b260d62-d719-45ef-bc5f-7fdf2fbe3c0e" />
+![image](https://github.com/user-attachments/assets/58740329-58e9-499f-9c6f-6fb31817387b)
 
 The first column shows permissions:
 
@@ -203,13 +204,12 @@ a real-world context: the system user that runs a web server must have permissio
 
 To switch to another user use `su user_name`
 
-<img width="422" height="126" alt="image" src="https://github.com/user-attachments/assets/c7408e97-1f52-42b6-b565-627a646bbfbc" />
+![image](https://github.com/user-attachments/assets/d17efa07-691d-4935-8a7d-581e1b0702bd)
 
 To switch to another user and inherit this user's environment use `su -l user_name`
 `-l` stands for `--login`
 
-<img width="446" height="130" alt="image" src="https://github.com/user-attachments/assets/7b21654b-0255-473c-a78d-e5f571ec5026" />
-
+![image](https://github.com/user-attachments/assets/dbd00fe1-c5e9-4b02-bb50-e1395f7cc718)
 
 &nbsp;
 ## Understanding File Permissions in Numeric Format
@@ -242,9 +242,10 @@ Each permission has a numeric value:
 
 To calculate the numeric value, we add the values together for each group.
 
-<img width="603" height="418" alt="image" src="https://github.com/user-attachments/assets/95c01e05-5d0c-4e1c-baf0-1499e50a2ba1" />
+![image]https://github.com/user-attachments/assets/7e6e5127-1b33-4f1c-9606-89cf6511ee0d)
 
 &nbsp;
+
 ## More Common Examples
 
 |Symbolic	|Numeric	|Meaning|
@@ -254,6 +255,7 @@ To calculate the numeric value, we add the values together for each group.
 |rwx------|700|Only the owner has access|
 
 &nbsp;
+
 ## Why This Matters
 
 Many commands like `chmod` use numeric permissions, for example `chmod 750 system_overview.txt`
@@ -261,9 +263,6 @@ This means:
   - Owner: full access <br>
   - Group: read + execute <br>
   - Others: no access <br>
-
-
-
 
 &nbsp;
 
@@ -284,8 +283,6 @@ This means:
 
 Linux has several important root directories that store system, user, and temporary data. 
 
-&nbsp;
-
 ## etc
 
 System Configuration - **/etc** is root directory is one of the most important root directories on your system. 
@@ -294,7 +291,7 @@ System Configuration - **/etc** is root directory is one of the most important r
   - `sudoers` lists users/groups allowed to run commands as **root**.
   - `passwd` & `shadow` store user passwords in **encrypted** format (SHA512).
 
-<img width="449" height="103" alt="image" src="https://github.com/user-attachments/assets/961e42d9-2d9c-4911-b33a-f5deff1f1dc6" />
+![image](https://github.com/user-attachments/assets/68c7aa97-387b-4f51-9fdb-8267cd8b6140)
 
 &nbsp;
 
@@ -303,7 +300,7 @@ System Configuration - **/etc** is root directory is one of the most important r
 Variable Data - **/var** stores frequently updated data from services and applications.
 Log files are written in `/var/log`
 
-<img width="448" height="93" alt="image" src="https://github.com/user-attachments/assets/55a42867-1af3-44e5-b14f-c69ebbef9273" />
+![image](https://github.com/user-attachments/assets/404b09f4-9da7-4ed9-82be-3f36a8e2c5d3)
 
 &nbsp;
 
@@ -320,7 +317,7 @@ Short for **temporary**, used for short-lived files.
 Cleared automatically on reboot.
 Any user can write here, useful for pentesting scripts or temporary storage.
 
-<img width="441" height="103" alt="image" src="https://github.com/user-attachments/assets/81023d15-2453-47e2-92a6-b5cfe72d109e" />
+![image](https://github.com/user-attachments/assets/61b0544f-3f57-4bcd-9493-2a03179deea0)
 
 &nbsp;
 
