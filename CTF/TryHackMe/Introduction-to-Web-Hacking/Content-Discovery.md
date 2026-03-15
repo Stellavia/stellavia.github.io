@@ -4,7 +4,7 @@ title: Content Discovery
 description: Learn the various ways of discovering hidden or private content on a webserver that could lead to new vulnerabilities.
 ---
 
-🔗 [Link to the Room]()
+🔗 [Link to the Room](https://tryhackme.com/room/contentdiscovery)
 
 ## 🏷️ Table of Contents
 
