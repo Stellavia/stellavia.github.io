@@ -5,7 +5,7 @@ I’m Stella, and this is my **personal space** for collecting and sharing knowl
 This hub is designed to be practical, **beginner-friendly**, and easy to explore:
 
 
-- [CTF](CTF/) - notes & solutions
+- [CTF](CTF/)  _(notes & solutions)_
   
 - [Books](Books/) 
 
