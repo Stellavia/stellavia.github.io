@@ -133,6 +133,11 @@ When checking the page source of the Acme IT Support website, you can find a com
 ---
 
 # Manual Discovery: Google Hacking and Dorking
+
+**OSINT (Open-Source Intelligence)** tools are publicly available resources that help gather information about a target website.
+
+
+
 # OSINT: Wappalyzer
 # OSINT: Wayback Machine
 # OSINT: GitHub
