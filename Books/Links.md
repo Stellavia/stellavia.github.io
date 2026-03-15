@@ -16,6 +16,9 @@
 ### History: <br>
 [Web Archive](https://web.archive.org/)<br>
 
+### Kali: <br>
+[Sublist3r](https://www.kali.org/tools/sublist3r/) <br>
+
 ### Linux Hardening: <br>
 https://www.tecmint.com/configure-pam-in-centos-ubuntu-linux/ <br>
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/security_guide/s2-wstation-privileges-noroot <br>
