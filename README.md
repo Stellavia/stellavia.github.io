@@ -5,9 +5,9 @@ I’m Stella, and this is my **personal space** for collecting and sharing knowl
 This hub is designed to be practical, **beginner-friendly**, and easy to explore:
 
 
-- [CTF](CTF/) - notes & solutions from different THM rooms
+- [CTF](CTF/) - notes & solutions
   
-- [Books](Books/) - some interesting books to check
+- [Books](Books/) 
 
 
 Feel free to dive into the sections, experiment with the examples, and use this space as a place to learn and grow - just like I do. Think of it as a “cheat sheet meets exploration lab” where knowledge is organized for curious minds.
