@@ -4,7 +4,7 @@ Learn about and exploit some of the most popular web app vulnerabilities.
 - [Content Discovery](Content-Discovery.md)
 - [Subdomain Enumeration](Subdomain-Enumeration.md)
 - [Authentication Bypass](Authentication-Bypass.md)
-- [IDOR]
+- [IDOR](IDOR.md)
 - [File Inclusion]
 - [Intro to SSRF]
 - [Intro to Cross-site Scripting]
