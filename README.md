@@ -14,4 +14,4 @@ Feel free to dive into the sections, experiment with the examples, and use this 
 
 Happy exploring!
 
-![image](https://github.com/user-attachments/assets/dcd6ac7c-fe6d-4532-ad6f-6bb2f843b683)
+![image](https://github.com/user-attachments/assets/0f6b29a5-68d3-47ed-be11-3b4a98c1a83c)
