@@ -4,7 +4,7 @@ title: Subdomain Enumeration
 description: Learn the various ways of discovering subdomains to expand your attack surface of a target.
 ---
 
-🔗 [Link to the Room]()
+🔗 [Link to the Room](https://tryhackme.com/room/subdomainenumeration)
 
 ## 🏷️ Table of Contents
 
