@@ -1,1 +1,2 @@
 - [Walking an Application](Walking-an-Application.md)
+- [Content Discovery](Content-Discovery.md)
