@@ -8,15 +8,16 @@ description: Learn the various ways of discovering subdomains to expand your att
 
 ## 🏷️ Table of Contents
 
-1. [Brief](#)<br>
-2. [OSINT: SSL and TLS Certificates](#)<br>
-3. [OSINT: Search Engines](#)<br>
-4. [DNS Bruteforce](#)<br>
-5. [OSINT: Sublist3r](#)<br>
-6. [Virtual Hosts](#)<br>
+1. [Brief](#brief)<br>
+2. [OSINT: SSL and TLS Certificates](#osint-ssl-and-tls-certificates)<br>
+3. [OSINT: Search Engines](#osint-search-engines)<br>
+4. [DNS Bruteforce](#dns-bruteforce)<br>
+5. [OSINT: Sublist3r](#osint-sublister)<br>
+6. [Virtual Hosts](#virtual-hosts)<br>
 
+---
 
-
+# 📚 Study Notes 
 
 # Brief
 
