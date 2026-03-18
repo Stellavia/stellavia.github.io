@@ -42,17 +42,13 @@ The Linux Incident Surface focuses on all potential points or sources in the Lin
 
 Linux Attack Surface refers to various entry points where an attack or unauthorized attempt could be made to enter the system or gain unauthorized attempts.
 
-
-
 <!-- NO QUESTIONS HERE -->
-
-&nbsp;
 
 # Lab Connection
 
 &nbsp;
 
-<img width="387" height="143" alt="image" src="https://github.com/user-attachments/assets/4a4c96dc-411f-4779-9799-d57cdd45f892" />
+![image](https://github.com/user-attachments/assets/299c67af-2447-45ad-a08e-5e56dd16ccaa)
 
 Note: All the important files are placed in the /home/activities/processes directory.
 
@@ -120,8 +116,6 @@ Key points where we could find the incident traces:
 - Processes may leave footprints showing attacks, malware execution, or unauthorized connections.  
 - Running processes are part of the system areas that forensic analysts check for potential evidence of compromise.
 
-<img width="100" height="100" alt="5e8dd9a4a45e18443162feab-1726082309841" src="https://github.com/user-attachments/assets/81a7d599-3f14-4244-acb8-d8bec06e002d" />
-
 &nbsp;
 
 ## Investigating Processes
@@ -131,10 +125,10 @@ In the `/home/activities/processes` directory, there is a code called `simple.c`
 Note: It is important to note that all the commands we are running will be through the `root` user. Run the command `sudo su` to change the user from default to root.
 
 1. **Compiling the Code** - run `gcc simple.c -o /tmp/simple` to compile and create an executable program
-<img width="639" height="89" alt="image" src="https://github.com/user-attachments/assets/a16a124a-0f40-48dd-8abe-aabb0c2cfff0" />
+![image](https://github.com/user-attachments/assets/128eadc7-32fe-472e-b185-8bfc792f503d)
 
 2. **Detecting the Footprints** - use `ps aux` to examine the running processes on the Linux.
-<img width="861" height="653" alt="5e8dd9a4a45e18443162feab-1726068688931" src="https://github.com/user-attachments/assets/bb465215-2d0e-4f15-ad24-ecfa1e3fe57a" />
+![image](https://github.com/user-attachments/assets/083209d0-299b-4471-9517-152cafa70954)
 
 `ps aux` displays all processes for all users in a detailed format. 
 Flags:
@@ -143,7 +137,7 @@ Flags:
 - `x`: Includes processes not attached to a terminal (useful for finding background processes).
 
 Filter out the output with `simple` process by running `ps aux | grep simple`
-<img width="837" height="82" alt="5e8dd9a4a45e18443162feab-1726084760603" src="https://github.com/user-attachments/assets/dabea7c8-17d7-441b-bf97-ed8e7a8288f4" />
+![image](https://github.com/user-attachments/assets/65457195-1a65-48e5-9384-f82968aef497)
 
 The output provides the following information:
 - `USER`: The user who owns the process.
@@ -158,7 +152,7 @@ The output provides the following information:
 - `COMMAND`: Command that started the process.
 
 Examine the files/resources connected with this process by using `lsof` with `PID`. As `PID` use the one assigned to our process which is 49782. Hence the syntax is `lsof -p 49782`
-<img width="891" height="259" alt="5e8dd9a4a45e18443162feab-1726084649872" src="https://github.com/user-attachments/assets/95beb962-a11c-448d-b6fa-751646716457" />
+![image](https://github.com/user-attachments/assets/0fcdace0-214e-4269-b6e9-6192beb9e712)
 
 &nbsp;
 
@@ -174,11 +168,12 @@ To execute the process use `./netcom` - this will establish a network connection
 ## Investigating Network Communication
 
 Use `ps aux | grep netcom` to filter the results to see whether the process is running on the system.
-<img width="842" height="63" alt="5e8dd9a4a45e18443162feab-1726090661088" src="https://github.com/user-attachments/assets/1c18af1d-6d96-432f-b4b3-3bcd11115c94" />
+![image](https://github.com/user-attachments/assets/35ed94b1-56eb-4995-880c-e02c7d11c8c1)
+
 The output confirms that the process is indeed running and has been assigned PID 267490, which will be different in your case.
 
 In another terminal run `lsof -i -P -n` to see if there is any network connection associated with this PID.
-<img width="1086" height="500" alt="5e8dd9a4a45e18443162feab-1726090877436" src="https://github.com/user-attachments/assets/47015abe-2005-46ea-9289-96da5cf5841d" />
+![image](https://github.com/user-attachments/assets/c43c0d7c-ce3c-45b4-bf3c-b6510e20a908)
 
 Let's break down the query and the flags first for better understanding:
 - `lsof`: It stands of List Open Files. This command displays the information about the files opened by the processes.
@@ -188,10 +183,10 @@ Let's break down the query and the flags first for better understanding:
 
 To explore processes and its network connection use `osquery`.
 To start `osquery`, open a new terminal and run the `osqueryi` as a root
-<img width="679" height="148" alt="5e8dd9a4a45e18443162feab-1726497883151" src="https://github.com/user-attachments/assets/844105a5-7627-4c43-98fe-dbd5310c89a9" />
+![image](https://github.com/user-attachments/assets/6e3349c8-24e1-4637-a112-064b607ed7a3)
 
 Narrow down the resurt to display the network connection associated with this PID using `SELECT pid, fd, socket, local_address, remote_address FROM process_open_sockets WHERE pid = 267490;`
-<img width="1026" height="122" alt="5e8dd9a4a45e18443162feab-1726091590966" src="https://github.com/user-attachments/assets/861ca97f-3ddc-45c6-b84d-92fe20a86389" />
+![image](https://github.com/user-attachments/assets/86b96c94-2635-4484-9d77-bc9007da0644)
 
 &nbsp;
 
@@ -234,6 +229,7 @@ Investigating persistence is crucial, as it’s often one of the first steps an 
 Some of the attack actions that can result in persistence on a Linux machine are explained below:
 
 &nbsp;
+
 ## Activity 1: Account Creation
 
 In an assumed compromised scenario, let's pretend to be Alice, who has got hold of the system. Start by creating a backdoor account using following commands to create an account `attacker` and will be added into the sudo group:
@@ -241,7 +237,7 @@ In an assumed compromised scenario, let's pretend to be Alice, who has got hold 
 `sudo passwd attacker`
 `echo "attacker ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers`
 
-<img width="862" height="208" alt="image" src="https://github.com/user-attachments/assets/c9bb1858-9de8-4578-94c5-00e2654799bd" />
+![image](https://github.com/user-attachments/assets/d9c3a48b-ce75-4d39-a1ab-adb77b6572fe)
 
 &nbsp;
 
@@ -253,15 +249,15 @@ Let's pretend to be Bob, a blue teamer trying to examine various incident surfac
 One of the key places we could begin looking at would be the logs. 
 All common logs can be found at the `/var/log/` location, as shown below:
 
-<img width="909" height="591" alt="image" src="https://github.com/user-attachments/assets/4435acd1-1fa3-4af6-8d25-0051b68703ef" />
+![image](https://github.com/user-attachments/assets/60d77762-4f4e-4063-a19e-4f01c44bf7a5)
 
 2. Examining auth.log
 - use `cat auth.log | grep useradd` command
-<img width="1113" height="186" alt="image" src="https://github.com/user-attachments/assets/89a69bd8-81cc-49b2-9b76-bd2e35586f7f" />
+![image](https://github.com/user-attachments/assets/2deb3486-52a9-4ac2-b1ec-b73e7ae66818)
 
 3. Examining /etc/passwd File
 - use `cat /etc/passwd`
-<img width="857" height="352" alt="image" src="https://github.com/user-attachments/assets/b1e6f43c-3d0a-4fc4-a1dd-6a03e346827c" />
+![image](https://github.com/user-attachments/assets/17c5d530-77b2-4108-b17a-ae6f375a2a2a)
 
 In the output, we can see all the accounts, including the one we just created. Some of the information this file contains are:
 - Username.
@@ -283,15 +279,15 @@ Examples of Crontab Entry:
 - `@reboot /path/to/malicious/script.sh`: This command will execute the `script.sh` at every reboot.
 - `* * * * * root /path/to/malicious/script.sh`: This command will execute `script.sh` every minute with root privileges.
 
-
-<img width="758" height="567" alt="image" src="https://github.com/user-attachments/assets/5c96a7bc-de15-4e4e-90cf-1f313a4220bc" />
+![image](https://github.com/user-attachments/assets/12eca165-d46c-4c2b-9d82-08e25cfab32d)
 
 &nbsp;
 
 ## Examining Malicious Cronjobs
 
 Explore `/var/spool/cron/crontabs/[username]` to explore the cronjobs associated with each user, as shown below:
-<img width="541" height="198" alt="5e8dd9a4a45e18443162feab-1726095701901" src="https://github.com/user-attachments/assets/7c7005b8-cc6e-450b-bbc0-6be393772f0c" />
+
+![image](https://github.com/user-attachments/assets/d92b43f0-0214-4d0a-9549-704daad094a2)
 
 &nbsp;
 
@@ -301,7 +297,7 @@ Another way to achieve persistence on a compromised system is installing a servi
 
 1. **Create a Configuration File**: use `sudo nano /etc/systemd/system/suspicious.service`
 - Add the following content to the configuration file:
-  <img width="410" height="275" alt="image" src="https://github.com/user-attachments/assets/6771f4d9-338d-4a2c-95fb-34f61adf9f65" />
+![image](https://github.com/user-attachments/assets/085fb8fd-6cda-47f3-ad25-2522a928a8a1)
 
 This configuration file will create a service and will execute the mentioned process. 
 - `ExecStart`: Specifies the command to run the collector program. Adjust the path as necessary.
@@ -313,11 +309,11 @@ This configuration file will create a service and will execute the mentioned pro
 - enable the service to run at startup: `sudo systemctl enable suspicious.service`
 - start the service right away: `sudo systemctl start suspicious.service`
 
-<img width="1087" height="127" alt="5e8dd9a4a45e18443162feab-1726094550783" src="https://github.com/user-attachments/assets/0565fa27-7604-434f-8a3c-e7d133439b94" />
+![image](https://github.com/user-attachments/assets/f4f592a2-8d1f-495d-987f-af11ca52f6df)
 
 Check status of the service with `sudo systemctl status suspicious.service`
 
-<img width="892" height="214" alt="5e8dd9a4a45e18443162feab-1726094644510" src="https://github.com/user-attachments/assets/2644fc76-4ade-4d44-9e35-400b91c6f768" />
+![image](https://github.com/user-attachments/assets/8d78d31f-5ba2-42f9-a26f-90833bafc029)
 
 &nbsp;
 
@@ -326,13 +322,13 @@ Check status of the service with `sudo systemctl status suspicious.service`
 Now that we know how an adversary could install and run the service in the background, let's see how we can find this service's footprints on the system.
 
 1. **Reviewing the Directory** - all services installed and enabled on the Linux can be found in `/etc/systemd/system`
-<img width="1404" height="270" alt="5e8dd9a4a45e18443162feab-1726094951470" src="https://github.com/user-attachments/assets/dbcc7985-9634-4416-ad24-2ec6a1749af9" />
+![image](https://github.com/user-attachments/assets/d69aa17d-d1e5-49d6-9b51-39c67f32189b)
 
 2. **Evidence in the Logs** - look at the `/var/log/systlog`; search for suspicious by running `cat /var/log/syslog | grep suspicious` 
-<img width="1354" height="277" alt="5e8dd9a4a45e18443162feab-1726095117167" src="https://github.com/user-attachments/assets/de6182be-0c4e-4a23-aeec-a4ccc4e13f18" />
+![image](https://github.com/user-attachments/assets/5a9f5db0-e54d-4c28-acb3-a5402f8ff537)
 
 3. **Examining  Journalctl** - by using `sudo journalctl -u suspicious`
-<img width="1352" height="313" alt="5e8dd9a4a45e18443162feab-1726095214921" src="https://github.com/user-attachments/assets/9e9b7584-090c-44bb-9bf6-00afbba260f4" />
+![image](https://github.com/user-attachments/assets/354d3acd-63d0-4621-93ce-ca50870b04a2)
 
 &nbsp;
 
@@ -365,8 +361,6 @@ From a **forensics and incident response** perspective, these areas-called **inc
 
  Investigating disk footprints is key to understanding the **scope and impact of a security incident**.
 
-<img width="750" height="800" alt="5e8dd9a4a45e18443162feab-1726081573301" src="https://github.com/user-attachments/assets/5b54fd96-bf95-42d0-bc09-dfb921f7341e" />
-
 &nbsp;
 
 ## File System and Directories
@@ -374,16 +368,16 @@ From a **forensics and incident response** perspective, these areas-called **inc
 In the Linux filesystem, some files or directories contain sensitive information and can keep track of any attack attempt. 
 Some of the key places are Configuration Files:
 - `/etc/passwd` contains information about the user accounts.
-<img width="842" height="438" alt="5e8dd9a4a45e18443162feab-1725839971884" src="https://github.com/user-attachments/assets/74eaa038-2cd0-4aad-947c-3306f1ca8a21" />
+![image](https://github.com/user-attachments/assets/290d50c3-1020-4667-9c25-e3ece89278d4)
 
 - `/etc/shadow` contains hashed passwords for user accounts.
-<img width="1290" height="492" alt="5e8dd9a4a45e18443162feab-1725840080237" src="https://github.com/user-attachments/assets/6332eb22-173d-42bf-970c-f9731d97b015" />
+![image](https://github.com/user-attachments/assets/468221fb-c155-48f9-8200-372f98b9f596)
 
 - `/etc/group` defines groups and the users associated with them. Groups are used to manage permissions and organize users with similar privileges.
-<img width="571" height="627" alt="5e8dd9a4a45e18443162feab-1726533006246" src="https://github.com/user-attachments/assets/2f91134f-6ac0-4ee9-93fe-d5de3a9a7503" />
+![image](https://github.com/user-attachments/assets/4c9508cf-b059-4b7e-8eae-cc97618c26e6)
 
 - `/etc/sudoers` configures sudo permissions, which can be a target for privilege escalation.
-<img width="939" height="561" alt="5e8dd9a4a45e18443162feab-1726081751300" src="https://github.com/user-attachments/assets/0b0b3bca-ede9-426d-a14c-9df6957005fc" />
+![image](https://github.com/user-attachments/assets/854448ca-8539-4e3c-b80e-8fca75ecb226)
 
 &nbsp;
 
@@ -426,7 +420,8 @@ This can happen in two main ways:
 ## Investigate the Suspicious Installed Package
 
 1. **Check the Installed Packages**: run `dpkg -l`
-<img width="1637" height="169" alt="5e8dd9a4a45e18443162feab-1726567411451" src="https://github.com/user-attachments/assets/72052896-9973-4ff7-9548-a37699db70eb" />
+![image](https://github.com/user-attachments/assets/d8aff651-bd76-4f64-b7f6-81924527004c)
+
 - this command will display all the installed packages on the disk.
 
 2. **Examining dpkg.log**: run `grep " install " /var/log/dpkg.log`
@@ -463,7 +458,7 @@ Useful for:
 - troubleshooting services
 - monitoring overall system health
 
-<img width="1331" height="453" alt="5e8dd9a4a45e18443162feab-1725847386528" src="https://github.com/user-attachments/assets/cbbd0549-8c8d-4fbb-8145-c59d6d23cf5a" />
+![image](https://github.com/user-attachments/assets/6fbd6a64-50fe-4b11-a9f2-87b4fe90b789)
 
 &nbsp;
 
@@ -495,7 +490,7 @@ Useful for detecting:
 
 Example indicator: many failed login attempts from the same IP address
 
-<img width="1076" height="549" alt="5e8dd9a4a45e18443162feab-1725851831948" src="https://github.com/user-attachments/assets/0a3585c1-19ef-4ec1-afee-3dcb56fe2f05" />
+![image](https://github.com/user-attachments/assets/3ef06615-ed38-499a-9d75-b85080640da2)
 
 Logs may reveal signs of an attack, such as:
 - multiple **failed login attempts**
