@@ -37,7 +37,7 @@ description: Analyze a memory dump of a Windows host and uncover malicious proce
 - The incident (THM-0001) was escalated on May 5th, 2025, after a potentially compromised Windows system (WIN-001) was identified.
 - A full memory dump was taken to preserve evidence, including host details, timestamp, and hash to ensure integrity.
 
-![image](https://github.com/user-attachments/assets/3aea08b2-e4e5-49b1-9a8b-6f3059c35a10)
+![image](https://github.com/user-attachments/assets/16862a88-dae7-440b-a488-7d328bb3efed)
 
 # Windows Process Architecture
 
@@ -86,7 +86,7 @@ description: Analyze a memory dump of a Windows host and uncover malicious proce
 >✅Solution: *It's field inside the EPROCESS structure. Windows uses this value to uniquely identify each running process.*
 
 ---
-&nbsp;  <!-- Toto pridáva prázdny riadok navyše -->
+&nbsp;  
 
 # Initial Triage of a New Memory Dump 
 
@@ -136,9 +136,35 @@ A malicious LNK file triggers cmd.exe, which starts PowerShell to download the p
 1. Generate a process tree using **Volatility**: `vol3 -f memory_dump windows.pstree > processtree.txt`
 2. Simplify the tree to show PID, PPID, and ImageFileName: `cut -d$'\t' -f1,2,3 processtree.txt`
 
-<img width="437" height="219" alt="image" src="https://github.com/user-attachments/assets/9a320d27-3280-4d58-ba94-a6ab560c6697" />
-
-<img width="515" height="504" alt="image" src="https://github.com/user-attachments/assets/4dd3ba48-f2e0-4c4e-8b4b-9d9f633e141e" />
+```
+ubuntu@tryhackme:~$ cut -d$'\t' -f1,2,3 processtree.txt
+PID             PPID    ImageFileName
+[REDACTED]
+592             508     winlogon.exe
+* 5232          592     userinit.exe
+** 5672         5232    explorer.exe
+*** 5952        5672    cmd.exe
+**** 3144       5952    conhost.exe
+*** 5252        5672    WINWORD.EXE
+**** 3392       5252    pdfupdater.exe
+***** 2576      3392    conhost.exe
+***** 10084     3392    windows-update
+****** 10032    10084   updater.exe
+******* 432     10032   cmd.exe
+******** 4592   432     conhost.exe
+******** 6984   432     powershell.exe
+**** 3932       5252    ai.exe
+*** 8936        5672    SecurityHealth
+*** 9096        5672    msedge.exe
+**** 8100       9096    msedge.exe
+**** 9164       9096    msedge.exe
+**** 3500       9096    msedge.exe
+**** 7408       9096    msedge.exe
+**** 9264       9096    msedge.exe
+**** 4152       9096    msedge.exe
+**** 7420       9096    msedge.exe
+[REDACTED]
+```
 
 ## Key Observations 
 
@@ -233,7 +259,8 @@ A malicious LNK file triggers cmd.exe, which starts PowerShell to download the p
 
 &nbsp;
 
-Dumped File Types
+Dumped File Types:
+
 | Type |	Description |
 | ------------------- | -------------------------------------------------------------- |
 | `ImageSectionObject` |	Mapped executable images (.exe, .dll, injected PE files) |
@@ -280,7 +307,7 @@ Dumped File Types
 - One executable was placed in the `Startup folder`, suggesting persistence
 - Multiple process memory dumps and executables were successfully extracted for further analysis
 
-<img width="757" height="422" alt="image" src="https://github.com/user-attachments/assets/917c66c4-7a73-4f18-88b5-b20d89478d54" />
+![image](https://github.com/user-attachments/assets/72ce31a9-80bc-4ce2-9c07-7093bae2c0e4)
 
 ## Reconstructed Attack Flow 
 
@@ -312,31 +339,30 @@ Dumped File Types
 
 &nbsp;
 
->[!NOTE]
-> | Code | Description |
-> | ------------------------------------------ | -------------------------------- |
-> | ``vol3 -f mem.mem windows.pslist > pslist.txt`` | list active processes |
-> | ``vol3 -f mem.mem windows.pstree > processtree.txt`` | show process tree (parent/child relationship |
-> | ``cut -d$'\t' -f1,2,3 processtree.txt`` | filter useful columns (PID / PPID / mame) |
-> | ``vol3 -f mem.mem windows.psscan > psscan.txt`` | scan all process objects (even hidden/terminated) |
-> | ``vol3 -f mem.mem windows.psxview > psxview.txt`` | cross-view process checks |
-> | ``awk 'NR==3 \|\| $4 == "False"' psxview.txt`` | show only suspicious mismatches |
-> | ``awk '{print $1,$3}' pslist.txt \| sort > pslist_processed.txt``
-> | ``awk '{print $1,$3}' psscan.txt \| sort > psscan_processed.txt`` | compare pslist vs psscan (prep files) |
-> | ``comm -23 psscan_processed.txt pslist_processed.txt`` | find processes missing from pslist |
-> | ``awk '$5 == 0 {count++} END {print count}' psscan.txt`` | count processes with 0 threads from psscan) |
-> | ``grep 7788 processtree.txt`` | find process by PID in pstree |
-> | ``grep 5672 pslist.txt`` | find process by PID in pslist |
-> | ``vol3 -f mem.mem windows.dlllist --pid PID > PID_dlllist.txt`` | list loaded DLLs + executable path |
-> | ``cat 5252_dlllist.txt`` | to view use cat |
-> | ``mkdir PID; cd PID; vol3 -f ../mem.mem windows.dumpfiles --pid PID`` | dump process files |
-> | ``ls PID \| grep -E ".docm\|.dotm" -i`` | find macro Word files |
-> | ``ls PID \| grep -E ".exe\|.dat" -i`` | find executables and data files |
-> | ``file filename.dat`` | identify real file type |
-> | ``strings suspicious_file.img \| less`` | extract readable strings |
-> | ``strings file.img \| grep -i http`` | search inside strings |
-> | ``strings file.img \| grep -i powershell`` | search inside strings |
-> | ``strings file.img \| grep -i cmd`` | search inside strings |
+| Code | Description |
+| ------------------------------------------ | -------------------------------- |
+| `vol3 -f mem.mem windows.pslist > pslist.txt` | list active processes |
+| `vol3 -f mem.mem windows.pstree > processtree.txt` | show process tree (parent/child relationship |
+| `cut -d$'\t' -f1,2,3 processtree.txt` | filter useful columns (PID / PPID / mame) |
+| `vol3 -f mem.mem windows.psscan > psscan.txt` | scan all process objects (even hidden/terminated) |
+| `vol3 -f mem.mem windows.psxview > psxview.txt` | cross-view process checks |
+| `awk 'NR==3 \|\| $4 == "False"' psxview.txt` | show only suspicious mismatches |
+| `awk '{print $1,$3}' pslist.txt \| sort > pslist_processed.txt`
+| `awk '{print $1,$3}' psscan.txt \| sort > psscan_processed.txt` | compare pslist vs psscan (prep files) |
+| `comm -23 psscan_processed.txt pslist_processed.txt` | find processes missing from pslist |
+| `awk '$5 == 0 {count++} END {print count}' psscan.txt` | count processes with 0 threads from psscan) |
+| `grep 7788 processtree.txt` | find process by PID in pstree |
+| `grep 5672 pslist.txt` | find process by PID in pslist |
+| `vol3 -f mem.mem windows.dlllist --pid PID > PID_dlllist.txt` | list loaded DLLs + executable path |
+| `cat 5252_dlllist.txt` | to view use cat |
+| `mkdir PID; cd PID; vol3 -f ../mem.mem windows.dumpfiles --pid PID` | dump process files |
+| `ls PID \| grep -E ".docm\|.dotm" -i` | find macro Word files |
+| `ls PID \| grep -E ".exe\|.dat" -i` | find executables and data files |
+| `file filename.dat` | identify real file type |
+| `strings suspicious_file.img \| less` | extract readable strings |
+| `strings file.img \| grep -i http` | search inside strings |
+| `strings file.img \| grep -i powershell` | search inside strings |
+| `strings file.img \| grep -i cmd` | search inside strings |
 
 &nbsp;
 
