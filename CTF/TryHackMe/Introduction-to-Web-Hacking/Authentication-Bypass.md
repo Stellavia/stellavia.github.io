@@ -83,12 +83,14 @@ If successful, the command will reveal one valid username and password combinati
 
 # Logic Flaw
 
+![image](https://github.com/user-attachments/assets/24e956e3-ffb4-4cd0-a9e4-f27ac70ae82e)
+
 A logic flaw happens when the normal logic of an application can be bypassed or manipulated.
 Attackers exploit mistakes in how the application processes requests.
 Logic flaws can appear anywhere in a web app, but they are common in authentication systems.
 
 Example code:
-<!-- ⚠️ add image ⚠️ -->
+![image](https://github.com/user-attachments/assets/ce465bb1-d4e9-4f3c-8755-8705deca531a)
 
 This code checks if the URL starts with /admin and then verifies if the user is an admin.
 
