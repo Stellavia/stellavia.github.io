@@ -44,7 +44,7 @@ description: Learn how to improve the security posture of your Linux systems.
   - Keeping the system updated
   - Monitoring logs
 
-<img width="595" height="382" alt="image" src="https://github.com/user-attachments/assets/ab5dd837-9e0f-4cd6-aa4b-82f83ad79670" />
+![image](https://github.com/user-attachments/assets/bb9b3e66-3237-4bb1-a50b-7e162b6fb99a)
 
 &nbsp;
 
@@ -196,7 +196,7 @@ description: Learn how to improve the security posture of your Linux systems.
 
 - The root account has full control over the system and should not be used for everyday work. Mistakes made as root can easily break the system.
 
-<img width="444" height="241" alt="image" src="https://github.com/user-attachments/assets/a011830c-255f-4ffd-b7d9-5c3d460bca83" />
+![image](https://github.com/user-attachments/assets/3db6dc46-8657-4e6b-bc6c-1d55936cd5f9)
 
 &nbsp;
 
@@ -274,7 +274,7 @@ description: Learn how to improve the security posture of your Linux systems.
 
 &nbsp;
 
-<img src="https://github.com/user-attachments/assets/c667cddd-4989-4cd4-b423-f2028309190c" width="300">
+![image](https://github.com/user-attachments/assets/7db664e6-d407-4853-80a8-0f6ea58ccb5b)
 
 &nbsp;
 
@@ -291,6 +291,7 @@ description: Learn how to improve the security posture of your Linux systems.
 ---
 ><details><summary>❓What flag is hidden in the sources.list file?</summary>THM{***_********_**********_******}</details>
 >✅Solution: Run `find / -type f -name sources.list 2>/dev/null` to find the file, then read it with `cat /etc/apt/sources.list` to read the flag.
+<!-- THM{not_Advanced_Persistent_Threat} --)
 ---
 
 &nbsp;
