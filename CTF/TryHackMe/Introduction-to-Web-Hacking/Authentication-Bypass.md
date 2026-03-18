@@ -89,7 +89,7 @@ A logic flaw happens when the normal logic of an application can be bypassed or 
 Attackers exploit mistakes in how the application processes requests.
 Logic flaws can appear anywhere in a web app, but they are common in authentication systems.
 
-Example code:
+Example code: <br>
 ![image](https://github.com/user-attachments/assets/ce465bb1-d4e9-4f3c-8755-8705deca531a)
 
 This code checks if the URL starts with /admin and then verifies if the user is an admin.
