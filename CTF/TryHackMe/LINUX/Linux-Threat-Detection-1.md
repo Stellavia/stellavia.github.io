@@ -361,9 +361,8 @@ Detection Workflow
 ---
 ><details><summary>❓Which Initial Access technique is likely used if a trusted app suddenly runs malicious commands?</summary>Supply Chain Compromise</details>
 ---
-><details><summary>❓</summary>Which detection method can you use to detect a variety of Initial Access techniques?</summary>Process Tree Analysis</details>
+><details><summary>❓Which detection method can you use to detect a variety of Initial Access techniques?</summary>Process Tree Analysis</details>
 ---
-><details><summary>❓</summary></details>
 ---
 
 &nbsp;
