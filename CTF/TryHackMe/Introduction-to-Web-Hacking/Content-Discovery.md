@@ -66,7 +66,7 @@ Look at the robots.txt file on the Acme IT Support website: open Firefox on the 
 
 A favicon is the small icon you see in a browser tab next to a website’s name.
 
-<!-- ⚠️ add image ⚠️ -->
+![image](https://github.com/user-attachments/assets/600cebc6-6f05-4324-b453-52092584ffc3)
 
 Sometimes websites are built using pre-made frameworks, and developers forget to replace the default favicon that comes with them. If that happens, the icon can reveal which framework or technology the website is using.
 
@@ -78,7 +78,7 @@ Security testers can compare the favicon with known icons in databases like the 
 
 Viewing the page source you'll see line six contains a link to the images/favicon.ico file. 
 
-<!-- ⚠️ add image ⚠️ -->
+![image](https://github.com/user-attachments/assets/3ab716bb-4df4-406e-8796-81f08aa4fd29)
 
 2. To download the favicon and get its md5 hash value run: `curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum`
 _Note: This curl will fail on the AttackBox if you are a free user, in which case you should use a VM for this. If your hash ends with 427e then your curl failed, and you may need to try it again._
