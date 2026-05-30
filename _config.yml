@@ -2,7 +2,7 @@
 
 title: IT Knowledge Hub
 description: Exploring, learning, and documenting the cyber universe
-baseurl: "" 
+baseurl: ""
 url: "https://stellavia.github.io"
 
 theme: jekyll-theme-cayman  
@@ -16,5 +16,3 @@ nav:
 - TryHackMe: "/CTF/TryHackMe/"
 - LINUX: "/CTF/TryHackMe/LINUX/"
 - Knowledge Hub: "/Knowledge-Hub/"
-- AI: "/Knowledge-Hub/AI/"
-- Docs: "/Docs/" 
