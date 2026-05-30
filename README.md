@@ -9,8 +9,6 @@ This hub is designed to be practical, **beginner-friendly**, and easy to explore
 
 - [Knowledge Hub](Knowledge-Hub/)
 
-- [Docs](Docs/)
-  
 
 Feel free to dive into the sections, experiment with the examples, and use this space as a place to learn and grow - just like I do. Think of it as a “cheat sheet meets exploration lab” where knowledge is organized for curious minds.
 
