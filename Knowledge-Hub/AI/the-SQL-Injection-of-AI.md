@@ -1,6 +1,6 @@
 ---
 layout: default 
-title: the SQL Injeciton of AI
+title: the SQL Injection of AI
 description: Learn about security challenges for AI systems and AI agents.
 
 ---
