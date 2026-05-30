@@ -140,7 +140,7 @@ Log and review:
 A useful rule for AI security is: Treat LLM input as hostile input.
 Just as web developers assume user input may contain malicious code, AI developers should assume that any content processed by an AI may contain Prompt Injection attempts.
 
-Key Takeaways
+# Key Takeaways
 
 	• Prompt Injection is an attack against AI decision-making.
 	• Attackers hide instructions inside content that AI systems read.
