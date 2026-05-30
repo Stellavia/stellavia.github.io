@@ -1,3 +1,9 @@
+---
+layout: default
+title: Prompt Injection: the SQL Injection of AI
+description: Learn about security challenges for AI systems and AI agents.
+---
+
 # What is Prompt Injection?
 
 Prompt Injection is a security attack where an attacker hides instructions inside content that an AI system reads.
