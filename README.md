@@ -6,8 +6,6 @@ This hub is designed to be practical, **beginner-friendly**, and easy to explore
 
 - [CTF](CTF/)  _(notes & solutions)_
 
-- [Docs](Docs/)
-
 - [Knowledge Hub](Knowledge-Hub/)
 
 
