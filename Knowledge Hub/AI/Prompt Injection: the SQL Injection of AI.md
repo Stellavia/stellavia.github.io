@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Prompt Injection: the SQL Injection of AI
+title: Prompt Injection - the SQL Injection of AI
 description: Learn about security challenges for AI systems and AI agents.
 ---
 
