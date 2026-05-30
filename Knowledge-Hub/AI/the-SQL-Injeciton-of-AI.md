@@ -102,6 +102,7 @@ SQL Injection attacks exploit the fact that applications treat user input as exe
 Prompt Injection attacks exploit the fact that AI systems may treat untrusted content as instructions.
 
 Comparison: <br>
+
 |Traditional Security|AI Security|
 |--------------------|-----------------|
 |SQL Injection|Prompt Injection|
@@ -114,42 +115,42 @@ The comparison is not perfect, but it helps explain why Prompt Injection is cons
 # Defensive Strategies
 
 1. Least Privilege
-Give AI systems only the permissions they need.
-Example:
-	• Access only one folder instead of an entire cloud drive.
-	• Read-only access when possible.
+Give AI systems only the permissions they need. <br>
+Example: <br>
+	• Access only one folder instead of an entire cloud drive. <br>
+	• Read-only access when possible. <br>
 	
 2. Treat All Content as Untrusted
-Assume that:
-	• Emails
-	• Documents
-	• Websites
-	• PDFs
+Assume that: <br>
+	• Emails <br>
+	• Documents <br>
+	• Websites <br>
+	• PDFs <br>
 may contain Prompt Injection attempts.
 
 3. Human Approval for Sensitive Actions
-Require user confirmation before:
-	• Sending emails
-	• Deleting files
-	• Sharing information
-	• Making purchases
+Require user confirmation before: <br>
+	• Sending emails <br>
+	• Deleting files <br>
+	• Sharing information <br>
+	• Making purchases <br>
 	
 4. Separate Data from Instructions
-Developers should design systems that clearly distinguish:
-	• User requests
-	• System instructions
-	• External content
+Developers should design systems that clearly distinguish: <br>
+	• User requests <br>
+	• System instructions <br>
+	• External content <br>
 	
 5. Monitor Agent Behavior
-Log and review:
-	• Tool usage
-	• File access
-	• Data transfers
-	• External communications
+Log and review: <br>
+	• Tool usage <br>
+	• File access <br>
+	• Data transfers <br>
+	• External communications <br>
 
 # Key Cybersecurity Principle
 
-A useful rule for AI security is: Treat LLM input as hostile input.
+A useful rule for AI security is: **Treat LLM input as hostile input**. <br>
 Just as web developers assume user input may contain malicious code, AI developers should assume that any content processed by an AI may contain Prompt Injection attempts.
 
 # Key Takeaways
