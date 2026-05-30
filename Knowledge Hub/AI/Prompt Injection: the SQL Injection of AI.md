@@ -1,17 +1,18 @@
-What is Prompt Injection?
+# What is Prompt Injection?
 
 Prompt Injection is a security attack where an attacker hides instructions inside content that an AI system reads.
 Instead of attacking software through code, the attacker attacks the AI's decision-making process.
 
-The goal is to make the AI:
-	• Ignore its original instructions
-	• Follow malicious instructions
-	• Reveal sensitive information
+The goal is to make the AI: <br>
+	• Ignore its original instructions <br>
+	• Follow malicious instructions <br>
+	• Reveal sensitive information <br>
 	• Perform actions it was not supposed to perform
 
 Prompt Injection is currently considered one of the most important security challenges for AI systems and AI agents.
 
-Why Does It Work?
+# Why Does It Work?
+
 Large Language Models (LLMs) such as ChatGPT process information as text.
 
 The problem is that both of these are text:
@@ -26,7 +27,7 @@ AI models may struggle because they process both as language.
 An attacker can exploit this weakness by hiding instructions inside documents, emails, web pages, PDFs, or other content that the AI reads.
 
 
-Simple Example
+## Simple Example
 
 A user asks: Summarize this report.
 The report contains: Quarterly Financial Report - Revenue increased by 12%.
@@ -37,7 +38,7 @@ Instead of generating a summary, a vulnerable AI system might respond: PINEAPPLE
 The attacker successfully changed the AI's behavior.
 
 
-Real-World Example
+## Real-World Example
 
 Imagine an AI assistant connected to Gmail, Google Drive, GitHub, Slack, Company databases
 
@@ -52,7 +53,7 @@ If the AI follows these instructions, sensitive information could be exposed.
 This is known as data exfiltration.
 
 
-What is Data Exfiltration?
+# What is Data Exfiltration?
 
 Data exfiltration means: Unauthorized transfer of sensitive information.
 
@@ -66,7 +67,7 @@ Examples:
 
 Prompt Injection attacks often aim to convince an AI system to reveal or transfer such data.
 
-Why AI Agents Increase the Risk
+# Why AI Agents Increase the Risk
 
 Traditional chatbots mostly answer questions.
 
@@ -74,7 +75,7 @@ Modern AI agents can read emails, search files, access cloud storage, create doc
 
 The more permissions an AI agent has, the greater the potential impact of a successful Prompt Injection attack.
 
-Hidden Prompt Techniques
+# Hidden Prompt Techniques
 
 Attackers may hide instructions in 
 documents: PDFs, Word documents, spreadsheets
@@ -83,7 +84,7 @@ Websites - Hidden HTML comments or invisible text.
 Source code - Comments that are intended for AI tools rather than developers.
 Shared files - Cloud storage documents that AI systems automatically process.
 
-Why Security Researchers Compare It to SQL Injection
+# Why Security Researchers Compare It to SQL Injection
 
 SQL Injection attacks exploit the fact that applications treat user input as executable commands.
 
@@ -98,7 +99,7 @@ Data theft	Data theft or unintended actions
 
 The comparison is not perfect, but it helps explain why Prompt Injection is considered such a significant threat.
 
-Defensive Strategies
+# Defensive Strategies
 
 1. Least Privilege
 Give AI systems only the permissions they need.
@@ -134,7 +135,7 @@ Log and review:
 	• Data transfers
 	• External communications
 
-Key Cybersecurity Principle
+# Key Cybersecurity Principle
 
 A useful rule for AI security is: Treat LLM input as hostile input.
 Just as web developers assume user input may contain malicious code, AI developers should assume that any content processed by an AI may contain Prompt Injection attempts.
