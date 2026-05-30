@@ -1,1 +1,1 @@
-[the SQL Injection of AI](the-SQL-Injeciton-of-AI.md)
+[the SQL Injection of AI](the-SQL-Injection-of-AI.md)
