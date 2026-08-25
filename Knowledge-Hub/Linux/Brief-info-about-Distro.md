@@ -36,8 +36,8 @@ A Linux distribution (or distro) is **an operating system built on the Linux ker
 - **Fedora** – modern, secure, and packed with the latest technologies
 - **Debian** – famous for its stability and reliability
 - **RHEL (Red Hat Enterprise Linux)** – enterprise-grade Linux with commercial support
-- **CentOS** Stream – a rolling preview of the next RHEL releases
-&nbsp;
+- **CentOS** Stream – a rolling preview of the next RHEL releases <br>
+
 For beginners, Ubuntu and Fedora are among the most popular choices. Both are easy to install, receive regular security updates, and are widely used on desktops as well as servers.
 
 &nbsp;
