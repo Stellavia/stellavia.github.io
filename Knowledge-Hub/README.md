@@ -1,5 +1,11 @@
-[AI](AI/) <br>
-[Hardware](Hardware/) <br>
+**OS**
 [Linux](Linux/) <br>
-[Network](Network/) <br>
 [Windows](Windows/) <br>
+<br>
+
+[AI](AI/) <br>
+
+[Hardware](Hardware/) <br>
+
+[Network](Network/) <br>
+
