@@ -1,1 +1,1 @@
-[Brief info about Distro](#Brief-info-about-Distro.md)
+[Brief info about Distro](Brief-info-about-Distro.md)
