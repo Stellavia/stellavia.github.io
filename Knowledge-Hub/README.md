@@ -1,4 +1,4 @@
-**OS** <br>
+**OS:** <br>
 [Linux](Linux/) <br>
 [Windows](Windows/) <br>
 <br>
