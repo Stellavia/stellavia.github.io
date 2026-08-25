@@ -1,6 +1,4 @@
-Hi there!  
-
-This hub is designed to be practical and **beginner-friendly**
+Practical and **beginner-friendly** knowledge hub:
 
 - [CTF](CTF/)  _(notes & solutions)_
 
