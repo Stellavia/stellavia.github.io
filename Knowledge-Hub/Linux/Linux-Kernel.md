@@ -50,8 +50,8 @@ The kernel ring buffer is **a temporary memory area** where Linux stores kernel 
 
 It contains information such as hardware detection, driver messages, boot logs or system warnings and errors. 
 
-You can read it with command `dmesg`
-To clear the buffer (as root): `sudo dmesg --clear`
+You can read it with command `dmesg` <br>
+To clear the buffer (as root): `sudo dmesg --clear` <br>
 
 **The ring buffer exists only in memory, so its contents disappear after the computer is shut down or restarted.**
 
@@ -164,7 +164,7 @@ If this process fails, the system may end with a kernel panic.
 # Init Process
 
 The init process is the first userspace process started by the kernel.
-Init = initialization.
+**Init** = **initialization**
 
 It always has `PID = 1` 
 
@@ -178,4 +178,4 @@ Its responsibilities:
 
 On most modern Linux systems, the init system is **systemd**.
 
-You can check it with: 'ps -p 1'
+You can check it with: `ps -p 1`
